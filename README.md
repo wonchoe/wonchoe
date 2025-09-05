@@ -3,12 +3,6 @@
 
 
 
-
-## 👨‍💻 About Me  
-
-DevOps engineer and cloud architect
-
-
 ## 🌐 Connect with me  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin&style=for-the-badge)](https://linkedin.com/in/oleksisem/)  
 [![GitHub followers](https://img.shields.io/github/followers/wonchoe?label=Follow&logo=github&style=for-the-badge)](https://github.com/wonchoe)  
