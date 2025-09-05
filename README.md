@@ -52,15 +52,15 @@ DevOps engineer and cloud architect
   </tr>
   <tr>
     <td><b>Last 24 hours</b></td>
-    <td><img src="https://img.shields.io/badge/🌐 1,724,125-1DA1F2?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👀 43,373-2ecc71?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👥 18,793-f1c40f?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/🌐 1,627,617-1DA1F2?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👀 40,539-2ecc71?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👥 17,562-f1c40f?style=for-the-badge"/></td>
   </tr>
   <tr>
     <td><b>Last 30 days</b></td>
-    <td><img src="https://img.shields.io/badge/🌐 31,362,354-1DA1F2?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👀 1,544,136-2ecc71?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👥 250,560-f1c40f?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/🌐 30,896,830-1DA1F2?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👀 1,505,579-2ecc71?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👥 244,150-f1c40f?style=for-the-badge"/></td>
   </tr>
 </table>
 
