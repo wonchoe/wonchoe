@@ -20,8 +20,6 @@ DevOps engineer and cloud architect
 ![GitOps Fundamentals](https://img.shields.io/badge/GitOps-Fundamentals-00A98F?style=for-the-badge&logo=git&logoColor=white) 
 ![MTA Networking](https://img.shields.io/badge/MTA-Networking_Fundamentals-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)  
 
----
----
 
 ## 📊 GitHub Stats  
 
