@@ -1,3 +1,5 @@
+<img src="assets/top_bg.png">
+
 ## 👨‍💻 About Me  
 
 DevOps engineer and cloud architect
