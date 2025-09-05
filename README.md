@@ -13,7 +13,10 @@
 
 <div class="topcontainer">
   <img src="assets/top_bg.png" alt="Background">
-  <p class="about">AWS DevOps Engineer | Cloud & Platform Architect | FinOps & SRE | Kubernetes</p>
+  <p style="    position: absolute;
+    right: 20px;
+    bottom: 33px;
+    font-size: 16px;">AWS DevOps Engineer | Cloud & Platform Architect | FinOps & SRE | Kubernetes</p>
 </div>
 
 
