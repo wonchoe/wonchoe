@@ -25,7 +25,6 @@ DevOps engineer and cloud architect
 
 ## 📊 GitHub Stats  
 
-![Oleksii's GitHub stats](https://github-readme-stats.vercel.app/api?username=wonchoe&show_icons=true&theme=tokyonight)  
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=wonchoe&layout=compact&theme=tokyonight)  
 
 
