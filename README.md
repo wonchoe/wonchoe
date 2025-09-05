@@ -1,22 +1,7 @@
-<style>
-  .about{
-    position: absolute;
-    right: 20px;
-    bottom: 33px;
-    font-size: 16px;
-  }
-  .topcontainer{
-    position: relative;
-  }
-
-</style>
 
 <div class="topcontainer">
   <img src="assets/top_bg.png" alt="Background">
-  <p style="    position: absolute;
-    right: 20px;
-    bottom: 33px;
-    font-size: 16px;">AWS DevOps Engineer | Cloud & Platform Architect | FinOps & SRE | Kubernetes</p>
+  <p>AWS DevOps Engineer | Cloud & Platform Architect | FinOps & SRE | Kubernetes</p>
 </div>
 
 
