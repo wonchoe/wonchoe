@@ -1,8 +1,5 @@
 
-<div class="topcontainer">
-  <img src="assets/top_bg.png" alt="Background">
-  <p>AWS DevOps Engineer | Cloud & Platform Architect | FinOps & SRE | Kubernetes</p>
-</div>
+  <img src="assets/top_bg1.png" alt="Background">
 
 
 
