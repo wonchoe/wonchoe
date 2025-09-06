@@ -4,12 +4,13 @@
 ##
 
 <p align="center">
-<img width="124px" src="assets/devops-pro.png">
-<img width="124px" src="assets/gitops-ent.png">
-<img width="124px" src="assets/solut-assoc.png">
-<img width="124px" src="assets/aws-pract.png">
-<img width="124px" src="assets/koob.png">
-<img width="124px" src="assets/gitops-fund.png">
+<img width="104px" src="assets/devops-pro.png">
+<img width="104px" src="assets/gitops-ent.png">
+<img width="104px" src="assets/solut-assoc.png">
+<img width="104px" src="assets/aws-pract.png">
+<img width="104px" src="assets/koob.png">
+<img width="104px" src="assets/gitops-fund.png">
+<img width="104px" src="assets/mta.png">
 </p>
 
 
