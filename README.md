@@ -1,6 +1,16 @@
 
   <img src="assets/top_bg_.png" alt="Background">
 
+##
+
+<p align="center">
+<img width="144px" src="assets/devops-pro.png">
+<img width="144px" src="assets/gitops-ent.png">
+<img width="144px" src="assets/solut-assoc.png">
+<img width="144px" src="assets/aws-pract.png">
+<img width="144px" src="assets/koob.png">
+<img width="144px" src="assets/gitops-fund.png">
+</p>
 
 
 
