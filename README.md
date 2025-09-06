@@ -21,17 +21,6 @@
 
 
 
-## 📚 Certifications  
-
-![AWS DevOps Professional](https://img.shields.io/badge/AWS-DevOps_Engineer_Professional-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white) 
-![AWS Solutions Architect](https://img.shields.io/badge/AWS-Solutions_Architect_Associate-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white) 
-![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud_Practitioner-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white) 
-![KCNA](https://img.shields.io/badge/KCNA-Kubernetes_&_Cloud_Native_Associate-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white) 
-![GitOps Enterprise](https://img.shields.io/badge/GitOps-Enterprise-00A98F?style=for-the-badge&logo=git&logoColor=white) 
-![GitOps Fundamentals](https://img.shields.io/badge/GitOps-Fundamentals-00A98F?style=for-the-badge&logo=git&logoColor=white) 
-![MTA Networking](https://img.shields.io/badge/MTA-Networking_Fundamentals-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)  
-
-
 ## 📊 GitHub Stats  
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=wonchoe&layout=compact&theme=tokyonight)  
