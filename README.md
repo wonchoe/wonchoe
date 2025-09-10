@@ -13,7 +13,7 @@
 <img width="104px" src="assets/mta.png">
 </p>
 
-
+[![Update Cloudflare Stats](https://github.com/wonchoe/wonchoe/actions/workflows/main.yml/badge.svg)](https://github.com/wonchoe/wonchoe/actions/workflows/main.yml)
 
 ## 🌐 Connect with me  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin&style=for-the-badge)](https://linkedin.com/in/oleksisem/)  
