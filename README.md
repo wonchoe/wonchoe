@@ -58,8 +58,8 @@
   </tr>
   <tr>
     <td><b>Last 30 days</b></td>
-    <td><img src="https://img.shields.io/badge/🌐 36,824,899-1DA1F2?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👀 1,471,318-2ecc71?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/🌐 36,834,549-1DA1F2?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👀 1,471,607-2ecc71?style=for-the-badge"/></td>
     <td><img src="https://img.shields.io/badge/👥 252,646-f1c40f?style=for-the-badge"/></td>
   </tr>
 </table>
