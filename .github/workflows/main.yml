@@ -30,9 +30,14 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          echo "::group::Config set"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "::endgroup::"
+
+          echo "::group::adding readme to index and push"
           git add README.md
           git commit -m "Update Cloudflare stats" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
+          echo "::endgroup::"
