@@ -30,10 +30,12 @@ jobs:
 
       - name: Commit and push changes
         run: |        
-          echo ::group::Config set
+          echo "::group::Name of Group"
+          echo "Configure the git"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          echo ::endgroup::
+          echo "::endgroup::"
+          
           echo ::group::adding readme to index and push
           git add README.md
           git commit -m "Update Cloudflare stats" || echo "No changes to commit"
