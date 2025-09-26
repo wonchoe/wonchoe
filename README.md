@@ -11,6 +11,8 @@
 <img width="104px" src="assets/koob.png">
 <img width="104px" src="assets/gitops-fund.png">
 <img width="104px" src="assets/mta.png">
+<img width="104px" src="assets/image.png">
+  
 </p>
 
 <br/>
