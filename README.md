@@ -57,15 +57,15 @@
   </tr>
   <tr>
     <td><b>Last 24 hours</b></td>
-    <td><img src="https://img.shields.io/badge/🌐 1,978,972-1DA1F2?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👀 60,598-2ecc71?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👥 24,245-f1c40f?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/🌐 2,133,965-1DA1F2?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👀 60,409-2ecc71?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👥 24,155-f1c40f?style=for-the-badge"/></td>
   </tr>
   <tr>
     <td><b>Last 30 days</b></td>
-    <td><img src="https://img.shields.io/badge/🌐 43,542,371-1DA1F2?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👀 1,613,111-2ecc71?style=for-the-badge"/></td>
-    <td><img src="https://img.shields.io/badge/👥 650,995-f1c40f?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/🌐 44,110,881-1DA1F2?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👀 1,629,553-2ecc71?style=for-the-badge"/></td>
+    <td><img src="https://img.shields.io/badge/👥 651,328-f1c40f?style=for-the-badge"/></td>
   </tr>
 </table>
 
