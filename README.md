@@ -33,7 +33,7 @@ So the interesting problems are rarely the pretty ones. Moderating a chat full o
 ## The one that got big
 
 <div align="center">
-  <img src="logo.png" width="340" alt="cursor.style v5">
+  <img src="logo.png" width="300" alt="cursor.style v5">
 </div>
 
 <div align="center">

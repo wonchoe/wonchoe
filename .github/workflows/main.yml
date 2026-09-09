@@ -2,7 +2,9 @@ name: Refresh profile cards
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    # 05:00 UTC is just after midnight in New York, which is the timezone the
+    # chat rollups are keyed by - so the day being reported has only just ended.
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 permissions:

@@ -50,7 +50,7 @@ def group(items, y, per_row, value_size, label_size, gap):
 def build(d):
     T.reset()
     metrics = d.get("metrics") or []
-    today = d.get("today") or []
+    today = d.get("yesterday") or d.get("today") or []
     body, y = [], 0
 
     if not metrics and not today:
@@ -67,7 +67,7 @@ def build(d):
         if today:
             body.append(f'<path class="rule" d="M{PAD} {y}H{W - PAD}"/>')
             y += 30
-            body.append(T.run("mono", "today so far", 11, PAD, y, 1.6, cls="sect"))
+            body.append(T.run("mono", "yesterday", 11, PAD, y, 1.6, cls="sect"))
             chunk, y = group(today, y + 40, 4, 24, 10.5, 62)
             body.append(chunk)
         y += 30

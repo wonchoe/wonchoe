@@ -34,7 +34,8 @@ try {
       .map((m) => ({ label: String(m.label), value: String(m.value) }));
 
   const metrics = clean(body.metrics, 6);
-  const today = clean(body.today, 4);
+  // `today` is the old key: the endpoint moved to a complete day.
+  const yesterday = clean(body.yesterday ?? body.today, 4);
 
   fs.writeFileSync(
     OUT,
@@ -43,13 +44,13 @@ try {
         updated: body.updated ?? new Date().toISOString().slice(0, 10),
         note: body.note ? String(body.note) : "",
         metrics,
-        today,
+        yesterday,
       },
       null,
       2
     ) + "\n"
   );
-  console.log(`chat stats: ${metrics.length} totals, ${today.length} for today`);
+  console.log(`chat stats: ${metrics.length} totals, ${yesterday.length} for the last full day`);
 } catch (err) {
   // A stale card is fine; a red workflow because someone's chat pod is
   // restarting is not.
