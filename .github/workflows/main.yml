@@ -1,44 +1,62 @@
-name: Update Cloudflare Stats
+name: Refresh profile cards
 
 on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write    
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Install dependencies
-        run: npm install node-fetch@2
+        run: |
+          npm install node-fetch@2
+          pip install "fonttools==4.*"
 
-      - name: Update README with Cloudflare stats
+      - name: Pull traffic from Cloudflare
         run: node update_readme.mjs
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
 
-      - name: Commit and push changes
-        run: |        
-          echo "::group::Name of Group"
-          echo "Configure the git"
+      - name: Redraw the traffic card
+        run: python tools/build_traffic.py
+
+      - name: Pull the chat figures from cursor.style
+        run: node tools/fetch_chat_stats.mjs
+        env:
+          CHAT_STATS_URL: ${{ secrets.CHAT_STATS_URL }}
+          CHAT_STATS_TOKEN: ${{ secrets.CHAT_STATS_TOKEN }}
+
+      - name: Redraw the chat card
+        run: python tools/build_chat_card.py
+
+      - name: Redraw the GitHub card
+        run: python tools/build_github_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          echo "::endgroup::"
-          
-          echo ::group::adding readme to index and push
-          git add README.md
-          git commit -m "Update Cloudflare stats" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add README.md assets/traffic.json assets/traffic.svg \
+                  assets/github.json assets/github.svg \
+                  assets/chat.json assets/chat.svg
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Refresh the profile cards"
           git push
-          echo ::endgroup::

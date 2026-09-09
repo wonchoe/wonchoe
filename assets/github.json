@@ -1,0 +1,43 @@
+{
+  "updated": "2026-09-08",
+  "repos": 30,
+  "contributions": 342,
+  "since": "2017-10-18",
+  "languages": [
+    {
+      "name": "JavaScript",
+      "share": 0.2793676799696069,
+      "color": "#f1e05a"
+    },
+    {
+      "name": "PHP",
+      "share": 0.26117334188140734,
+      "color": "#4F5D95"
+    },
+    {
+      "name": "HTML",
+      "share": 0.25591835402085966,
+      "color": "#e34c26"
+    },
+    {
+      "name": "Blade",
+      "share": 0.09632640583168604,
+      "color": "#f7523f"
+    },
+    {
+      "name": "Python",
+      "share": 0.04462094634302709,
+      "color": "#3572A5"
+    },
+    {
+      "name": "TypeScript",
+      "share": 0.02517170350055503,
+      "color": "#3178c6"
+    },
+    {
+      "name": "Other",
+      "share": 0.037421568452857934,
+      "color": "#5B6785"
+    }
+  ]
+}
