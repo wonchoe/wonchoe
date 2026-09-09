@@ -25,7 +25,7 @@ CREDS = ["AWS DevOps Engineer, Professional      Kubernetes & Cloud Native Assoc
          "GitOps Certified, Enterprise      GitHub Actions Certified",
          "Claude with Amazon Bedrock, Anthropic      Azure DevOps to GitHub migrations"]
 HOME = "Bradenton, Florida"
-SITES = [["cursor.style", "chat.cursor.style", "cursor-land.com", "agro-post.com"],
+SITES = [["cursor.style", "terra.cursor.style", "cursor-land.com", "agro-post.com"],
          ["youtube-skins.com", "fb.zone", "agropost.com.ua", HOME]]
 SEL = dict(x=52, y=34, w=620, h=144, r=10)
 RIGHT = 948

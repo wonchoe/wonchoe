@@ -72,8 +72,8 @@ def build(d):
 
     H = int(y + 18)
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
-     viewBox="0 0 {W} {H}" role="img" aria-label="chat.cursor.style in numbers">
-  <title>chat.cursor.style</title>
+     viewBox="0 0 {W} {H}" role="img" aria-label="the cursor.style chat in numbers">
+  <title>The cursor.style chat</title>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
       <stop offset="0" stop-color="#070C20"/><stop offset="1" stop-color="#0C1132"/>
@@ -105,7 +105,7 @@ def build(d):
     <rect x="0" y="{H - 4}" width="{W}" height="4" fill="url(#spectrum)"/>
   </g>
 
-  {T.run("display", "chat.cursor.style", 25, PAD, 52, cls="head")}
+  {T.run("display", "the chat, in numbers", 25, PAD, 52, cls="head")}
   {T.run("mono", "updated " + d.get("updated", "-"), 11.5, W - PAD, 50, 0.2, anchor="end", cls="sub")}
   <path class="rule" d="M{PAD} 70H{W - PAD}"/>
 

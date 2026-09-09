@@ -22,7 +22,7 @@ So the interesting problems are rarely the pretty ones. Moderating a chat full o
 | **[cursor-land.com](https://cursor-land.com)** | Second cursor brand - same engine, its own audience | [![users](https://img.shields.io/chrome-web-store/users/oinkhgpjmeccknjbbccabjfonamfmcbn?style=flat-square&label=users&color=6366F1&labelColor=0B1130)](https://chromewebstore.google.com/detail/oinkhgpjmeccknjbbccabjfonamfmcbn) [![rating](https://img.shields.io/chrome-web-store/rating/oinkhgpjmeccknjbbccabjfonamfmcbn?style=flat-square&label=rating&color=FFC23C&labelColor=0B1130)](https://chromewebstore.google.com/detail/oinkhgpjmeccknjbbccabjfonamfmcbn) |
 | **[youtube-skins.com](https://youtube-skins.com)** | 130+ skins for the YouTube player, and an ad skipper beside it | [![users](https://img.shields.io/chrome-web-store/users/imomahaddnhnhfggpmpbphdiobpmahof?style=flat-square&label=users&color=6366F1&labelColor=0B1130)](https://chromewebstore.google.com/detail/imomahaddnhnhfggpmpbphdiobpmahof) [![rating](https://img.shields.io/chrome-web-store/rating/imomahaddnhnhfggpmpbphdiobpmahof?style=flat-square&label=rating&color=FFC23C&labelColor=0B1130)](https://chromewebstore.google.com/detail/imomahaddnhnhfggpmpbphdiobpmahof) |
 | **[fb.zone](https://fb.zone)** | Video and photo background themes for Facebook | [![users](https://img.shields.io/chrome-web-store/users/oodajhdbojacdmkhkiafdhicifcdjoig?style=flat-square&label=users&color=6366F1&labelColor=0B1130)](https://chromewebstore.google.com/detail/oodajhdbojacdmkhkiafdhicifcdjoig) [![rating](https://img.shields.io/chrome-web-store/rating/oodajhdbojacdmkhkiafdhicifcdjoig?style=flat-square&label=rating&color=FFC23C&labelColor=0B1130)](https://chromewebstore.google.com/detail/oodajhdbojacdmkhkiafdhicifcdjoig) |
-| **[chat.cursor.style](https://chat.cursor.style)** | Moderated chat, calls and profiles for the same audience | rooms, DMs, WebRTC calls |
+| **[Chat](https://cursor.style)** | Moderated rooms, direct messages, photo albums and WebRTC calls, built into the main site | rooms, DMs, group voice |
 | **[Slither](https://cursor.style/games/slither)** | Free multiplayer snake, no install, no account | live on the games hub |
 | **[Terra](https://terra.cursor.style)** | Open 3D world you can run around in, built on streamed low-poly terrain | in preview |
 | **[agropost.com.ua](https://agropost.com.ua)** | Ukrainian agricultural marketplace: listings, company catalogue, grain logistics | running since 2010 |
@@ -50,12 +50,12 @@ So the interesting problems are rarely the pretty ones. Moderating a chat full o
 
 ## The one with the moderation problem
 
-chat.cursor.style is the community that grew out of the cursor library: rooms, direct messages, photo albums, group voice and WebRTC calls, in 49 languages. Most of the people in it are teenagers, and about nine in ten are in one country, which turns out to matter enormously for how you moderate.
+The chat is the community that grew out of the cursor library, and it runs inside the same pod as the site: rooms, direct messages, photo albums, group voice and WebRTC calls, in 49 languages. Most of the people in it are teenagers, and about nine in ten are in one country, which turns out to matter enormously for how you moderate.
 
 So the hard parts are not the sockets. They are the two-tier Spanish profanity dictionary that knows `por no` is not `porno`, the image moderation that has to tell a swimsuit from something that has to be reported, the deferred triage queue with a ladder of sanctions, and the audit trail that proves what was done and when.
 
 <div align="center">
-  <img src="assets/chat.svg" width="100%" alt="chat.cursor.style in numbers">
+  <img src="assets/chat.svg" width="100%" alt="The cursor.style chat in numbers">
 </div>
 
 ## The one universities cite
