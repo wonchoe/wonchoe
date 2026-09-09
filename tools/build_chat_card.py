@@ -26,19 +26,25 @@ PAD = 52
 
 
 def group(items, y, per_row, value_size, label_size, gap):
-    """Rows of centred figures. Returns (svg, y after the group)."""
+    """Rows of centred figures. Returns (svg, the y the group ends at).
+
+    The end is the bottom of the last label, not the last value baseline: the
+    caller places the next thing against it, and returning the baseline once put
+    the footnote straight through the labels.
+    """
     out = []
     rows = [items[i:i + per_row] for i in range(0, len(items), per_row)]
+    label_drop = label_size + 7
     for row in rows:
         span = (W - 2 * PAD) / len(row)
         for i, m in enumerate(row):
             mid = PAD + span * (i + 0.5)
             out.append(T.run("display", str(m["value"]), value_size, mid, y,
                              anchor="middle", cls="fig"))
-            out.append(T.run("mono", str(m["label"]), label_size, mid, y + label_size + 7,
+            out.append(T.run("mono", str(m["label"]), label_size, mid, y + label_drop,
                              0.3, anchor="middle", cls="figlab"))
         y += gap
-    return "".join(out), y - gap
+    return "".join(out), y - gap + label_drop
 
 
 def build(d):
@@ -57,7 +63,7 @@ def build(d):
             body.append(T.run("mono", "all time", 11, PAD, y, 1.6, cls="sect"))
             chunk, y = group(metrics, y + 44, 3, 32, 11.5, 76)
             body.append(chunk)
-            y += 34
+            y += 28
         if today:
             body.append(f'<path class="rule" d="M{PAD} {y}H{W - PAD}"/>')
             y += 30
