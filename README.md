@@ -42,9 +42,9 @@ So the interesting problems are rarely the pretty ones. Moderating a chat full o
 
 <!-- CF-STATS:START -->
 
-**146,739,998** requests &nbsp;·&nbsp; **17,012,816** page views &nbsp;·&nbsp; **4,959,572** unique visitors &nbsp; over the last 30 days
+**147,495,877** requests &nbsp;·&nbsp; **17,083,037** page views &nbsp;·&nbsp; **4,983,575** unique visitors &nbsp; over the last 30 days
 
-<sub>Yesterday alone: 5,276,389 requests from 192,872 people. Refreshed 2026-09-09 by the workflow above.</sub>
+<sub>Yesterday alone: 5,276,393 requests from 192,872 people. Refreshed 2026-09-09 by the workflow above.</sub>
 
 <!-- CF-STATS:END -->
 

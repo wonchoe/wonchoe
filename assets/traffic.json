@@ -1,6 +1,195 @@
 {
   "updated": "2026-09-09",
-  "days": [],
-  "last24h": { "requests": 5276389, "pageViews": 517298, "uniques": 192872 },
-  "last30d": { "requests": 146739998, "pageViews": 17012816, "uniques": 4959572 }
+  "days": [
+    {
+      "date": "2026-08-10",
+      "requests": 4733793,
+      "pageViews": 518584,
+      "uniques": 77433
+    },
+    {
+      "date": "2026-08-11",
+      "requests": 4821267,
+      "pageViews": 585374,
+      "uniques": 134905
+    },
+    {
+      "date": "2026-08-12",
+      "requests": 4546903,
+      "pageViews": 467341,
+      "uniques": 132499
+    },
+    {
+      "date": "2026-08-13",
+      "requests": 4500236,
+      "pageViews": 466589,
+      "uniques": 135872
+    },
+    {
+      "date": "2026-08-14",
+      "requests": 5160139,
+      "pageViews": 589987,
+      "uniques": 137503
+    },
+    {
+      "date": "2026-08-15",
+      "requests": 3654719,
+      "pageViews": 659339,
+      "uniques": 186799
+    },
+    {
+      "date": "2026-08-16",
+      "requests": 3014205,
+      "pageViews": 555852,
+      "uniques": 170395
+    },
+    {
+      "date": "2026-08-17",
+      "requests": 4315505,
+      "pageViews": 491457,
+      "uniques": 246261
+    },
+    {
+      "date": "2026-08-18",
+      "requests": 4936883,
+      "pageViews": 576959,
+      "uniques": 197203
+    },
+    {
+      "date": "2026-08-19",
+      "requests": 5439696,
+      "pageViews": 695356,
+      "uniques": 188536
+    },
+    {
+      "date": "2026-08-20",
+      "requests": 5466963,
+      "pageViews": 805964,
+      "uniques": 332014
+    },
+    {
+      "date": "2026-08-21",
+      "requests": 6535215,
+      "pageViews": 706191,
+      "uniques": 290554
+    },
+    {
+      "date": "2026-08-22",
+      "requests": 3939435,
+      "pageViews": 575024,
+      "uniques": 228230
+    },
+    {
+      "date": "2026-08-23",
+      "requests": 3429034,
+      "pageViews": 652790,
+      "uniques": 232288
+    },
+    {
+      "date": "2026-08-24",
+      "requests": 5239689,
+      "pageViews": 523215,
+      "uniques": 240662
+    },
+    {
+      "date": "2026-08-25",
+      "requests": 5358738,
+      "pageViews": 552862,
+      "uniques": 263208
+    },
+    {
+      "date": "2026-08-26",
+      "requests": 5188046,
+      "pageViews": 525796,
+      "uniques": 273116
+    },
+    {
+      "date": "2026-08-27",
+      "requests": 5452912,
+      "pageViews": 615175,
+      "uniques": 259375
+    },
+    {
+      "date": "2026-08-28",
+      "requests": 5279179,
+      "pageViews": 625587,
+      "uniques": 241245
+    },
+    {
+      "date": "2026-08-29",
+      "requests": 3430989,
+      "pageViews": 430278,
+      "uniques": 233370
+    },
+    {
+      "date": "2026-08-30",
+      "requests": 6113717,
+      "pageViews": 569672,
+      "uniques": 308397
+    },
+    {
+      "date": "2026-08-31",
+      "requests": 6025051,
+      "pageViews": 638081,
+      "uniques": 250994
+    },
+    {
+      "date": "2026-09-01",
+      "requests": 5841393,
+      "pageViews": 543971,
+      "uniques": 210413
+    },
+    {
+      "date": "2026-09-02",
+      "requests": 5631908,
+      "pageViews": 576620,
+      "uniques": 213339
+    },
+    {
+      "date": "2026-09-03",
+      "requests": 5775427,
+      "pageViews": 630438,
+      "uniques": 218004
+    },
+    {
+      "date": "2026-09-04",
+      "requests": 5704492,
+      "pageViews": 615210,
+      "uniques": 228663
+    },
+    {
+      "date": "2026-09-05",
+      "requests": 3541988,
+      "pageViews": 394141,
+      "uniques": 177051
+    },
+    {
+      "date": "2026-09-06",
+      "requests": 3166511,
+      "pageViews": 344652,
+      "uniques": 176402
+    },
+    {
+      "date": "2026-09-07",
+      "requests": 5170208,
+      "pageViews": 557709,
+      "uniques": 205696
+    },
+    {
+      "date": "2026-09-08",
+      "requests": 5276393,
+      "pageViews": 517298,
+      "uniques": 192872
+    }
+  ],
+  "last24h": {
+    "requests": 5276393,
+    "pageViews": 517298,
+    "uniques": 192872
+  },
+  "last30d": {
+    "requests": 147495877,
+    "pageViews": 17083037,
+    "uniques": 4983575
+  }
 }
