@@ -21,9 +21,12 @@ NAME = "Oleksii Semeniuk"
 # the LinkedIn headline, split where it reads naturally
 HEADLINE = ["Senior DevOps Engineer  |  Cloud Platform Architect",
             "Kubernetes  |  Cybersecurity"]
-CREDS = ["AWS DevOps Engineer, Professional      Kubernetes & Cloud Native Associate",
-         "GitOps Certified, Enterprise      GitHub Actions Certified",
-         "Claude with Amazon Bedrock, Anthropic      Azure DevOps to GitHub migrations"]
+# Two aligned columns under a label, so the list reads as certifications rather
+# than as a job title - "Associate" is a exam level, not a seniority.
+CREDS = [("AWS DevOps Engineer, Professional", "GitHub Actions Certified"),
+         ("Kubernetes & Cloud Native (KCNA)", "Claude with Amazon Bedrock"),
+         ("GitOps Certified, Enterprise", "Azure DevOps to GitHub migrations")]
+CRED_COLS = (52, 400)
 SEL = dict(x=52, y=34, w=620, h=144, r=10)
 RIGHT = 948
 
@@ -66,9 +69,10 @@ def build():
     uri, _ = portrait(round(mh))
     mx, my = W - 22 - mw, (H - mh) / 2
 
-    creds = "".join(
-        f'{T.run("mono", c, 12, SEL["x"], 212 + i * 22, 0.2)}'
-        for i, c in enumerate(CREDS))
+    creds = T.run("mono", "certifications", 11, SEL["x"], 202, 1.6, cls="sect")
+    creds += "".join(
+        f'{T.run("mono", c, 12, CRED_COLS[col], 226 + row * 20, 0.2)}'
+        for row, pair in enumerate(CREDS) for col, c in enumerate(pair))
 
     grid = "".join(f'<circle cx="{x}" cy="{y}" r="1.1"/>'
                    for x in range(18, W, 26) for y in range(16, H, 26))
@@ -104,6 +108,7 @@ def build():
     .name   {{ fill:#EDF2FF }}
     .tag    {{ fill:#9DB2E6 }}
     .creds  {{ fill:#93A6D6 }}
+    .sect   {{ fill:#8AD5FB }}
     .rule   {{ stroke:#33427A; stroke-width:1 }}
     .marquee{{ fill:#38BDF8; fill-opacity:.07; stroke:#8AD5FB; stroke-opacity:.75;
                stroke-width:1.6; stroke-dasharray:8 6;

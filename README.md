@@ -12,7 +12,7 @@
 
 I build browser products for people who are mostly not developers - a kid picking a rainbow cursor, a teenager reskinning their YouTube player - and I run everything underneath them myself: Cloudflare at the edge, k3s and Argo CD in the middle, MySQL, MongoDB and object storage at the back.
 
-So the interesting problems are rarely the pretty ones. Moderating a chat full of twelve-year-olds writing in Spanish. Keeping one container image from eating a node. Serving nine figures of requests a month on a budget that would make a funded startup laugh.
+So the interesting problems are rarely the pretty ones. Judging every photo and message in the room before anyone else sees it. Keeping one container image from eating a node. Serving nine figures of requests a month on a budget that would make a funded startup laugh.
 
 ## What I run
 
@@ -50,9 +50,20 @@ So the interesting problems are rarely the pretty ones. Moderating a chat full o
 
 ## The one with the moderation problem
 
-The chat is the community that grew out of the cursor library, and it runs inside the same pod as the site: rooms, direct messages, photo albums, group voice and WebRTC calls, in 49 languages. Most of the people in it are teenagers, and about nine in ten are in one country, which turns out to matter enormously for how you moderate.
+The chat grew out of the cursor library and runs in the same pod as the site: rooms, direct messages, photo albums, group voice and WebRTC calls, in 49 languages. Most of the people in it are teenagers, and that one fact decides almost everything about how it has to be built.
 
-So the hard parts are not the sockets. They are the two-tier Spanish profanity dictionary that knows `por no` is not `porno`, the image moderation that has to tell a swimsuit from something that has to be reported, the deferred triage queue with a ladder of sanctions, and the audit trail that proves what was done and when.
+So the hard part was never the sockets. It is that every username, every message and every photo has to be judged before anyone else sees it, in languages I do not read, in under a second, at a cost per item of approximately nothing.
+
+| Layer | What runs |
+| :-- | :-- |
+| **Photos** | OpenAI `omni-moderation-latest`, with per-category score thresholds measured against real uploads rather than guessed |
+| **A second opinion on photos** | Amazon Rekognition, wired in beside it and running in shadow: it logs its labels and decides nothing until they prove the thresholds. The two miss different things - a real shotgun scored 0 at OpenAI and 100 at Rekognition, which is the whole argument for keeping both |
+| **Text** | The same moderation model, then `gpt-4o-mini` on what scores zero and is still a problem: a phone number handed over in a direct message, or an intent that only reads as harmful in the language it was written in |
+| **Words** | A two-level dictionary per language, because in some of them a slur is one space away from an ordinary phrase, and a naive filter bans half the room |
+| **Reports** | Triaged automatically before a human opens them, with a ladder of sanctions that does not wait for one |
+| **Warnings** | Treated as a product rather than a log line: a badge beside the avatar, a modal the account has to acknowledge, and a record of what was decided and when |
+
+Failing open is the expensive direction here, so an outage at the moderator fails the upload instead of waving it through.
 
 <div align="center">
   <img src="assets/chat.svg" width="100%" alt="The cursor.style chat in numbers">
@@ -79,6 +90,7 @@ Five public brands, one cluster, one operator. Nothing reaches production except
 
 ## Certifications
 
+<div align="center">
 <table>
   <tr>
     <td align="center" width="25%"><img src="assets/devops-pro.png" width="96" alt=""><br><sub><b>AWS DevOps Engineer</b><br>Professional</sub></td>
@@ -99,6 +111,7 @@ Five public brands, one cluster, one operator. Nothing reaches production except
     <td></td>
   </tr>
 </table>
+</div>
 
 <sub>Eleven in total. The last three are set in this page's own style, because the issuers publish no badge artwork for them.</sub>
 
