@@ -4,45 +4,45 @@
   "metrics": [
     {
       "label": "messages",
-      "value": "2,762,275"
+      "value": "2,762,698"
     },
     {
       "label": "searches",
-      "value": "44,317"
+      "value": "44,401"
     },
     {
       "label": "photos shared",
-      "value": "34,005"
+      "value": "34,008"
     },
     {
       "label": "friendships",
-      "value": "29,974"
+      "value": "29,989"
     },
     {
       "label": "calls connected",
-      "value": "18,780"
+      "value": "18,781"
     },
     {
       "label": "rooms opened",
       "value": "2,941"
     }
   ],
-  "today": [
+  "yesterday": [
     {
       "label": "messages",
-      "value": "2,079"
+      "value": "49,403"
     },
     {
       "label": "searches",
-      "value": "674"
+      "value": "4,608"
     },
     {
       "label": "photos",
-      "value": "28"
+      "value": "916"
     },
     {
       "label": "calls",
-      "value": "9"
+      "value": "771"
     }
   ]
 }
