@@ -1,5 +1,48 @@
 {
-  "updated": "pending",
-  "note": "",
-  "metrics": []
+  "updated": "2026-09-09",
+  "note": "totals since December 2025",
+  "metrics": [
+    {
+      "label": "messages",
+      "value": "2,762,275"
+    },
+    {
+      "label": "photos shared",
+      "value": "34,005"
+    },
+    {
+      "label": "calls connected",
+      "value": "18,780"
+    },
+    {
+      "label": "voice minutes",
+      "value": "186"
+    },
+    {
+      "label": "rooms opened",
+      "value": "2,941"
+    },
+    {
+      "label": "friendships",
+      "value": "29,974"
+    }
+  ],
+  "today": [
+    {
+      "label": "messages",
+      "value": "2,079"
+    },
+    {
+      "label": "room joins",
+      "value": "6"
+    },
+    {
+      "label": "calls",
+      "value": "9"
+    },
+    {
+      "label": "photos",
+      "value": "28"
+    }
+  ]
 }
