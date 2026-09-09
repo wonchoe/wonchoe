@@ -7,24 +7,24 @@
       "value": "2,762,275"
     },
     {
+      "label": "searches",
+      "value": "44,317"
+    },
+    {
       "label": "photos shared",
       "value": "34,005"
+    },
+    {
+      "label": "friendships",
+      "value": "29,974"
     },
     {
       "label": "calls connected",
       "value": "18,780"
     },
     {
-      "label": "voice minutes",
-      "value": "186"
-    },
-    {
       "label": "rooms opened",
       "value": "2,941"
-    },
-    {
-      "label": "friendships",
-      "value": "29,974"
     }
   ],
   "today": [
@@ -33,16 +33,16 @@
       "value": "2,079"
     },
     {
-      "label": "room joins",
-      "value": "6"
-    },
-    {
-      "label": "calls",
-      "value": "9"
+      "label": "searches",
+      "value": "674"
     },
     {
       "label": "photos",
       "value": "28"
+    },
+    {
+      "label": "calls",
+      "value": "9"
     }
   ]
 }
