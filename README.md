@@ -42,9 +42,9 @@ So the interesting problems are rarely the pretty ones. Judging every photo and 
 
 <!-- CF-STATS:START -->
 
-**287,586,573** requests &nbsp;·&nbsp; **19,522,211** page views &nbsp;·&nbsp; **4,271,565** unique visitors &nbsp; over the last 30 days
+**297,271,819** requests &nbsp;·&nbsp; **19,563,143** page views &nbsp;·&nbsp; **4,260,685** unique visitors &nbsp; over the last 30 days
 
-<sub>Yesterday alone: 14,855,885 requests from 134,951 people. Refreshed 2026-10-01 by the workflow above.</sub>
+<sub>Yesterday alone: 15,647,899 requests from 143,262 people. Refreshed 2026-10-02 by the workflow above.</sub>
 
 <!-- CF-STATS:END -->
 
