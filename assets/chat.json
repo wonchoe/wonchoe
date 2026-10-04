@@ -1,48 +1,48 @@
 {
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "note": "totals since December 2025",
   "metrics": [
     {
       "label": "messages",
-      "value": "4,124,115"
+      "value": "4,170,457"
     },
     {
       "label": "searches",
-      "value": "145,285"
+      "value": "147,336"
     },
     {
       "label": "photos shared",
-      "value": "62,609"
+      "value": "63,607"
     },
     {
       "label": "friendships",
-      "value": "50,720"
+      "value": "51,236"
     },
     {
       "label": "calls connected",
-      "value": "38,556"
+      "value": "38,952"
     },
     {
       "label": "rooms opened",
-      "value": "3,565"
+      "value": "3,579"
     }
   ],
   "yesterday": [
     {
       "label": "messages",
-      "value": "67,889"
+      "value": "44,214"
     },
     {
       "label": "searches",
-      "value": "5,465"
+      "value": "2,052"
     },
     {
       "label": "photos",
-      "value": "1,586"
+      "value": "951"
     },
     {
       "label": "calls",
-      "value": "1,301"
+      "value": "375"
     }
   ]
 }
