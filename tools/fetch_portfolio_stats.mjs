@@ -12,6 +12,7 @@ const OUTPUT = path.join(ROOT, "assets", "portfolio.json");
 const TOTAL_KEYS = ["requests", "cachedRequests", "bytes", "cachedBytes"];
 const SOURCE = "Cloudflare / connected sites";
 const SCOPE = "accessible_zones";
+const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 const CODES = new Set([
   "CONFIGURATION_MISSING", "ZONE_DISCOVERY_PERMISSION", "ZONE_DISCOVERY_FAILED",
   "ZONE_DISCOVERY_INCOMPLETE", "NO_ACCESSIBLE_ZONES", "ANALYTICS_PERMISSION",
@@ -19,13 +20,17 @@ const CODES = new Set([
 ]);
 
 export class PortfolioError extends Error {
-  constructor(code) {
+  constructor(code, reason) {
     super(`Portfolio sync unavailable (${code}).`);
     this.code = code;
+    if (safeReason(reason)) this.reason = reason;
   }
 }
 
-function fail(code) { throw new PortfolioError(code); }
+function safeReason(reason) {
+  return typeof reason === "string" && /^(HTTP_[1-5]\d{2}|HTTP_ERROR|NETWORK|INVALID_JSON|INVALID_RESPONSE|UPSTREAM_ERROR|UPSTREAM_PERMISSION)$/.test(reason);
+}
+function fail(code, reason) { throw new PortfolioError(code, reason); }
 function fingerprint(id) { return createHash("sha256").update(`cloudflare-zone:${id}`).digest("hex"); }
 function safeSum(a, b) {
   const value = a + b;
@@ -39,7 +44,21 @@ function tokenFrom(env) {
   return token;
 }
 
-async function api(url, options, token, fetchImpl, stage) {
+function retryAfter(response) {
+  const value = response.headers?.get?.("retry-after");
+  if (!value) return 0;
+  const seconds = /^\d+(?:\.\d+)?$/.test(value.trim()) ? Number(value) : (Date.parse(value) - Date.now()) / 1000;
+  return Number.isFinite(seconds) ? Math.max(0, Math.min(30_000, seconds * 1000)) : 0;
+}
+
+function requestFailure(stage, reason, retryable = false, response) {
+  const error = new PortfolioError(`${stage}_FAILED`, reason);
+  error.retryable = retryable;
+  error.retryAfterMs = response ? retryAfter(response) : 0;
+  throw error;
+}
+
+async function requestOnce(url, options, token, fetchImpl, stage) {
   let response;
   try {
     response = await fetchImpl(url, {
@@ -47,23 +66,44 @@ async function api(url, options, token, fetchImpl, stage) {
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       signal: AbortSignal.timeout(30_000),
     });
-  } catch { fail(`${stage}_FAILED`); }
-  if (response.status === 401 || response.status === 403) fail(`${stage}_PERMISSION`);
-  if (!response.ok) fail(`${stage}_FAILED`);
+  } catch { requestFailure(stage, "NETWORK", true); }
+  const httpReason = Number.isInteger(response.status) && response.status >= 100 && response.status <= 599
+    ? `HTTP_${response.status}` : "HTTP_ERROR";
+  if (response.status === 401 || response.status === 403) fail(`${stage}_PERMISSION`, httpReason);
+  if (!response.ok) {
+    const transient = [408, 429].includes(response.status) || (response.status >= 500 && response.status <= 599);
+    requestFailure(stage, httpReason, transient, response);
+  }
   let body;
-  try { body = await response.json(); } catch { fail(`${stage}_FAILED`); }
-  if (!body || typeof body !== "object") fail(`${stage}_FAILED`);
+  try { body = await response.json(); } catch { requestFailure(stage, "INVALID_JSON"); }
+  if (!body || typeof body !== "object") requestFailure(stage, "INVALID_RESPONSE");
   if (body.success === false || body.errors?.length) {
     // Inspect only to choose a fixed diagnostic; never print upstream messages.
     const permission = Array.isArray(body.errors) && body.errors.some(error =>
       [10000, 9103, 9109].includes(error.code) ||
       /permission|unauthori[sz]ed|not authori[sz]ed|authentication|access denied|forbidden/i.test(String(error.message)));
-    fail(`${stage}_${permission ? "PERMISSION" : "FAILED"}`);
+    if (permission) fail(`${stage}_PERMISSION`, "UPSTREAM_PERMISSION");
+    const transient = Array.isArray(body.errors) && body.errors.some(error =>
+      /rate.?limit|too many requests|temporar|timed? ?out|timeout|internal(?: server)? error|upstream|unavailable|try again|deadline exceeded|resource exhausted/i.test(String(error.message)) ||
+      /^(INTERNAL_SERVER_ERROR|INTERNAL_ERROR|TIMEOUT|RATE_LIMITED|SERVICE_UNAVAILABLE)$/.test(String(error.extensions?.code)));
+    requestFailure(stage, "UPSTREAM_ERROR", transient, response);
   }
   return body;
 }
 
-export async function discoverZones({ env = process.env, fetchImpl = fetch } = {}) {
+async function api(url, options, token, fetchImpl, stage, sleepImpl) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try { return await requestOnce(url, options, token, fetchImpl, stage); }
+    catch (error) {
+      if (!error.retryable || attempt === 3) throw error;
+      const delay = Math.max(attempt * 1000, error.retryAfterMs || 0);
+      console.warn(`Portfolio ${stage.toLowerCase()} retry ${attempt}/2 (${error.reason}); waiting ${delay / 1000}s.`);
+      await sleepImpl(delay);
+    }
+  }
+}
+
+export async function discoverZones({ env = process.env, fetchImpl = fetch, sleepImpl = sleep } = {}) {
   const token = tokenFrom(env);
   const zones = new Set();
   let totalCount;
@@ -71,7 +111,7 @@ export async function discoverZones({ env = process.env, fetchImpl = fetch } = {
   for (let page = 1; ; page++) {
     const url = new URL("https://api.cloudflare.com/client/v4/zones");
     url.search = new URLSearchParams({ status: "active", per_page: "50", page: String(page), order: "name", direction: "asc" });
-    const body = await api(url.href, { method: "GET" }, token, fetchImpl, "ZONE_DISCOVERY");
+    const body = await api(url.href, { method: "GET" }, token, fetchImpl, "ZONE_DISCOVERY", sleepImpl);
     const info = body.result_info;
     if (body.success !== true || !Array.isArray(body.result) || !info ||
         !Number.isSafeInteger(info.total_count) || info.total_count < 0 ||
@@ -97,7 +137,7 @@ export async function discoverZones({ env = process.env, fetchImpl = fetch } = {
   return [...zones].sort();
 }
 
-async function zoneSnapshot(zone, { env, now, fetchImpl }) {
+async function zoneSnapshot(zone, { env, now, fetchImpl, sleepImpl }) {
   const range = period(now);
   const query = `{ viewer { zones(filter: {zoneTag: "${zone}"}) {
     zoneTag
@@ -107,7 +147,7 @@ async function zoneSnapshot(zone, { env, now, fetchImpl }) {
   } } }`;
   const body = await api("https://api.cloudflare.com/client/v4/graphql", {
     method: "POST", body: JSON.stringify({ query }),
-  }, tokenFrom(env), fetchImpl, "ANALYTICS");
+  }, tokenFrom(env), fetchImpl, "ANALYTICS", sleepImpl);
   const zones = body.data?.viewer?.zones;
   if (!Array.isArray(zones) || zones.length !== 1 || zones[0].zoneTag !== zone) fail("ANALYTICS_INVALID");
   // A returned, matching zone with an empty result set has no HTTP events.
@@ -171,8 +211,8 @@ function readPrevious(output) {
   } catch { return null; }
 }
 
-export async function collect({ env = process.env, now = new Date(), fetchImpl = fetch, previous = null } = {}) {
-  const zones = await discoverZones({ env, fetchImpl });
+export async function collect({ env = process.env, now = new Date(), fetchImpl = fetch, previous = null, sleepImpl = sleep } = {}) {
+  const zones = await discoverZones({ env, fetchImpl, sleepImpl });
   const coverage = new Set(zones.map(fingerprint));
   if (previous && (previous.siteCount > zones.length || previous.coverageFingerprints.some(hash => !coverage.has(hash)))) {
     fail("COVERAGE_REDUCED");
@@ -180,20 +220,21 @@ export async function collect({ env = process.env, now = new Date(), fetchImpl =
   const snapshots = [];
   // Conservative sequential requests avoid bursts against analytics rate limits.
   // Any single failure aborts the entire refresh; partial totals are not useful.
-  for (const zone of zones) snapshots.push(await zoneSnapshot(zone, { env, now, fetchImpl }));
+  for (const zone of zones) snapshots.push(await zoneSnapshot(zone, { env, now, fetchImpl, sleepImpl }));
   return mergeSnapshots(snapshots, zones, now);
 }
 
-export async function refresh({ env = process.env, now = new Date(), fetchImpl = fetch, output = OUTPUT } = {}) {
+export async function refresh({ env = process.env, now = new Date(), fetchImpl = fetch, output = OUTPUT, sleepImpl = sleep } = {}) {
   const previous = readPrevious(output);
   let snapshot;
   try {
-    snapshot = await collect({ env, now, fetchImpl, previous });
+    snapshot = await collect({ env, now, fetchImpl, previous, sleepImpl });
   } catch (error) {
     const code = CODES.has(error.code) ? error.code : "ANALYTICS_FAILED";
-    if (!previous) throw new PortfolioError(code);
-    console.warn(`Portfolio sync unavailable (${code}); retaining snapshot from ${previous.updated}.`);
-    return { refreshed: false, snapshot: previous, code };
+    const reason = safeReason(error.reason) ? error.reason : undefined;
+    if (!previous) throw new PortfolioError(code, reason);
+    console.warn(`Portfolio sync unavailable (${code}${reason ? `; ${reason}` : ""}); retaining snapshot from ${previous.updated}.`);
+    return { refreshed: false, snapshot: previous, code, ...(reason ? { reason } : {}) };
   }
   fs.mkdirSync(path.dirname(output), { recursive: true });
   const temporary = `${output}.tmp`;
@@ -209,7 +250,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     : refresh();
   task.catch(error => {
     const code = CODES.has(error.code) ? error.code : "ANALYTICS_FAILED";
-    console.error(`Portfolio sync unavailable (${code}); no statistics were written.`);
+    const reason = safeReason(error.reason) ? `; ${error.reason}` : "";
+    console.error(`Portfolio sync unavailable (${code}${reason}); no statistics were written.`);
     process.exitCode = 1;
   });
 }

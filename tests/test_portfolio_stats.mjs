@@ -128,15 +128,18 @@ test("one site's analytics failure preserves the entire previous snapshot byte-f
   fs.writeFileSync(output, previous);
   const mock = fakeFetch();
   let queried = 0;
-  const result = await refresh({ env: ENV, now: NEXT_DAY, output, fetchImpl: async (url, options) => {
-    if (options.body && ++queried === 2) return { ok: false, status: 503 };
+  const delays = [];
+  const result = await refresh({ env: ENV, now: NEXT_DAY, output, sleepImpl: async ms => delays.push(ms), fetchImpl: async (url, options) => {
+    if (options.body && ++queried >= 2) return { ok: false, status: 503 };
     return mock(url, options);
   } });
   assert.equal(result.refreshed, false);
   assert.equal(result.code, "ANALYTICS_FAILED");
+  assert.equal(result.reason, "HTTP_503");
   assert.equal(result.snapshot.updated, "2026-10-10");
   assert.equal(fs.readFileSync(output, "utf8"), previous);
-  assert.equal(queried, 2);
+  assert.equal(queried, 4);
+  assert.deepEqual(delays, [1000, 2000]);
 });
 
 test("losing any previously covered site rejects smaller and substituted coverage before querying analytics", async t => {
@@ -174,7 +177,7 @@ test("first-run failures provide fixed diagnostic codes and write no fake snapsh
     { env: ENV, fetchImpl: async () => ok(zonePage([], { totalPages: 0 })), code: "NO_ACCESSIBLE_ZONES" },
   ];
   for (const scenario of cases) {
-    await assert.rejects(() => refresh({ ...scenario, now: NOW, output }), error => {
+    await assert.rejects(() => refresh({ ...scenario, now: NOW, output, sleepImpl: async () => {} }), error => {
       assert.equal(error.code, scenario.code);
       assert.equal(error.message, `Portfolio sync unavailable (${scenario.code}).`);
       return true;
@@ -239,4 +242,122 @@ test("a dedicated portfolio token takes precedence without changing existing cur
     return mock(url, options);
   } });
   assert.equal(env.CLOUDFLARE_API_TOKEN, "synthetic-token");
+});
+
+test("transient HTTP, network, and GraphQL upstream failures retry only the failing query and recover", async t => {
+  const warnings = [];
+  t.mock.method(console, "warn", value => warnings.push(value));
+  const scenarios = [
+    ...[408, 429, 500, 502, 503, 504].map(status => () => ({ ok: false, status })),
+    () => { throw new Error("private-domain.example synthetic-token connection reset"); },
+    () => ok({ errors: [{ message: "private-domain.example synthetic-token: internal server error" }] }),
+    () => ok({ errors: [{ message: "private-domain.example: rate limit exceeded" }] }),
+    () => ok({ errors: [{ extensions: { code: "SERVICE_UNAVAILABLE" }, message: "private-account details" }] }),
+  ];
+  for (const failure of scenarios) {
+    let discoveryCalls = 0;
+    let analyticsCalls = 0;
+    const requests = [];
+    const delays = [];
+    const snapshot = await collect({ env: ENV, now: NOW, sleepImpl: async ms => delays.push(ms),
+      fetchImpl: async (url, options) => {
+        if (url.includes("/zones?")) {
+          discoveryCalls++;
+          return ok(zonePage([IDS[0]]));
+        }
+        requests.push(options.body);
+        if (++analyticsCalls < 3) return failure();
+        return ok(analytics(IDS[0]));
+      },
+    });
+    assert.equal(snapshot.totals.requests, 100);
+    assert.equal(discoveryCalls, 1);
+    assert.equal(analyticsCalls, 3);
+    assert.equal(new Set(requests).size, 1);
+    assert.deepEqual(delays, [1000, 2000]);
+  }
+  assert.doesNotMatch(warnings.join("\n"), /synthetic-token|private-domain|private-account/);
+  assert.match(warnings.join("\n"), /HTTP_429/);
+  assert.match(warnings.join("\n"), /HTTP_502/);
+  assert.match(warnings.join("\n"), /NETWORK/);
+  assert.match(warnings.join("\n"), /UPSTREAM_ERROR/);
+});
+
+test("discovery retries temporary failures without skipping or doubling zones", async () => {
+  let calls = 0;
+  const delays = [];
+  const zones = await discoverZones({ env: ENV, sleepImpl: async ms => delays.push(ms), fetchImpl: async () => {
+    if (++calls === 1) return { ok: false, status: 502 };
+    return ok(zonePage(IDS));
+  } });
+  assert.deepEqual(zones, IDS);
+  assert.equal(calls, 2);
+  assert.deepEqual(delays, [1000]);
+});
+
+test("Retry-After seconds and HTTP dates are honored with a 30 second cap", async () => {
+  const scenarios = [
+    ["7", 7000],
+    ["120", 30000],
+    [new Date(Date.now() + 120_000).toUTCString(), 30000],
+    ["not a date", 1000],
+    ["0", 1000],
+  ];
+  for (const [header, expectedDelay] of scenarios) {
+    let calls = 0;
+    const delays = [];
+    await discoverZones({ env: ENV, sleepImpl: async ms => delays.push(ms), fetchImpl: async () => {
+      if (++calls === 1) return { ok: false, status: 429, headers: { get: name => name === "retry-after" ? header : null } };
+      return ok(zonePage([IDS[0]]));
+    } });
+    assert.equal(calls, 2);
+    assert.deepEqual(delays, [expectedDelay]);
+  }
+});
+
+test("permission, permanent HTTP errors, and malformed analytics fail immediately without retry", async () => {
+  const scenarios = [
+    ...[400, 401, 403, 404, 422].map(status => () => ({ ok: false, status })),
+    () => ok({ errors: [{ message: "permission denied for private-domain.example" }] }),
+    () => ok({ errors: [{ message: "Cannot query field unknown on type Zone" }] }),
+    () => ok({ data: { viewer: { zones: [{ zoneTag: IDS[0], audience: null }] } } }),
+    () => ({ ok: true, status: 200, json: async () => { throw new Error("malformed JSON"); } }),
+  ];
+  for (const failure of scenarios) {
+    let analyticsCalls = 0;
+    await assert.rejects(() => collect({ env: ENV, now: NOW,
+      sleepImpl: async () => assert.fail("permanent failures must not retry"),
+      fetchImpl: async url => {
+        if (url.includes("/zones?")) return ok(zonePage([IDS[0]]));
+        analyticsCalls++;
+        return failure();
+      },
+    }));
+    assert.equal(analyticsCalls, 1);
+  }
+});
+
+test("exhausted network retries expose only a safe diagnostic and keep the previous file and date", async t => {
+  const output = outputPath(t);
+  const previous = JSON.stringify(priorSnapshot(), null, 2) + "\n";
+  fs.writeFileSync(output, previous);
+  const warnings = [];
+  t.mock.method(console, "warn", value => warnings.push(value));
+  let calls = 0;
+  const delays = [];
+  const result = await refresh({ env: ENV, now: NEXT_DAY, output, sleepImpl: async ms => delays.push(ms),
+    fetchImpl: async () => {
+      calls++;
+      throw new Error("private-domain.example synthetic-token upstream details");
+    },
+  });
+  assert.equal(result.refreshed, false);
+  assert.equal(result.code, "ZONE_DISCOVERY_FAILED");
+  assert.equal(result.reason, "NETWORK");
+  assert.equal(calls, 3);
+  assert.deepEqual(delays, [1000, 2000]);
+  assert.equal(result.snapshot.updated, "2026-10-10");
+  assert.equal(fs.readFileSync(output, "utf8"), previous);
+  assert.match(warnings.at(-1), /ZONE_DISCOVERY_FAILED; NETWORK/);
+  assert.doesNotMatch(warnings.join("\n"), /private-domain|synthetic-token|upstream details/);
 });
