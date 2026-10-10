@@ -42,7 +42,8 @@ def summary(d, details=True):
     text += " Commits follow GitHub contribution rules."
     languages = d.get("languages") or []
     if languages:
-        text += " Public non-fork repository languages by code size: " + ", ".join(
+        coverage = "Public and private" if d.get("language_scope") == "all" else "Public"
+        text += f" {coverage} non-fork repository languages by code size: " + ", ".join(
             f"{lang['name']} {lang['share'] * 100:.1f}%" for lang in languages
         ) + "."
     return text + f" Updated {d['updated']}."
@@ -121,7 +122,9 @@ def _metrics(d, mobile, pad, width):
 
 def _languages(d, mobile, pad, width, y):
     languages = d.get("languages") or []
-    out = [_text("PUBLIC REPOSITORY LANGUAGES", pad, y, 11.5, cls="section", tracking=.6)]
+    all_languages = d.get("language_scope") == "all"
+    heading = "LANGUAGES / PUBLIC + PRIVATE" if all_languages else "PUBLIC REPOSITORY LANGUAGES"
+    out = [_text(heading, pad, y, 11.5, cls="section", tracking=.6)]
     if mobile:
         out.append(_text("non-fork repositories / code by bytes", pad, y+20, 10.7))
         bar_y = y + 36

@@ -114,7 +114,7 @@ LANGUAGE_FIELDS = """
 """
 
 
-def _language_metrics(api):
+def _language_metrics(api, include_private=False):
     sizes, colors = collections.Counter(), {}
 
     def add(connection):
@@ -135,16 +135,17 @@ def _language_metrics(api):
     cursor = None
     while True:
         data = api.graphql("""
-            query($login: String!, $after: String) {
+            query($login: String!, $after: String, $privacy: RepositoryPrivacy) {
               user(login: $login) {
                 repositories(first: 100, after: $after, ownerAffiliations: [OWNER],
-                             isFork: false, privacy: PUBLIC) {
+                             isFork: false, privacy: $privacy) {
                   pageInfo { hasNextPage endCursor }
                   nodes { id languages(first: 100) { """ + LANGUAGE_FIELDS + """ } }
                 }
               }
             }
-        """, {"login": USER, "after": cursor})
+        """, {"login": USER, "after": cursor,
+              "privacy": None if include_private else "PUBLIC"})
         repositories = data["user"]["repositories"]
         for repository in repositories["nodes"]:
             languages = repository["languages"]
@@ -245,6 +246,7 @@ def fetch(token, now=None):
 
     commits_total = sum(year["commits"] for year in years)
     contribution_scope = _contribution_scope(api.scopes, is_owner, restricted_total)
+    include_private_languages = is_owner and "repo" in (api.scopes or set())
     return {
         "schema_version": 2,
         "updated": now.date().isoformat(),
@@ -261,6 +263,6 @@ def fetch(token, now=None):
             "to": now.date().isoformat(),
         },
         "years": years,
-        "languages": _language_metrics(api),
-        "language_scope": "public",
+        "languages": _language_metrics(api, include_private=include_private_languages),
+        "language_scope": "all" if include_private_languages else "public",
     }

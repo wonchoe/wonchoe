@@ -4,17 +4,56 @@
 
 <div align="center">
 
-[![cursor.style](https://img.shields.io/badge/cursor.style-live-38BDF8?style=flat-square&labelColor=0B1130&logo=googlechrome&logoColor=white)](https://cursor.style) [![LinkedIn](https://img.shields.io/badge/LinkedIn-oleksisem-6366F1?style=flat-square&labelColor=0B1130&logo=linkedin&logoColor=white)](https://linkedin.com/in/oleksisem/) [![Telegram](https://img.shields.io/badge/Telegram-wonchoe-A855F7?style=flat-square&labelColor=0B1130&logo=telegram&logoColor=white)](https://t.me/wonchoe) [![Followers](https://img.shields.io/github/followers/wonchoe?style=flat-square&labelColor=0B1130&color=EC4899&logo=github&logoColor=white&label=followers)](https://github.com/wonchoe) ![Profile views](https://komarev.com/ghpvc/?username=wonchoe&label=views&color=0B1130&style=flat-square) [![Traffic sync](https://img.shields.io/github/actions/workflow/status/wonchoe/wonchoe/main.yml?style=flat-square&labelColor=0B1130&color=FFC23C&label=daily%20refresh)](https://github.com/wonchoe/wonchoe/actions/workflows/main.yml)
+[![cursor.style](https://img.shields.io/badge/cursor.style-live-38BDF8?style=flat-square&labelColor=0B1130&logo=googlechrome&logoColor=white)](https://cursor.style) [![LinkedIn](https://img.shields.io/badge/LinkedIn-oleksisem-6366F1?style=flat-square&labelColor=0B1130&logo=linkedin&logoColor=white)](https://linkedin.com/in/oleksisem/) [![Telegram](https://img.shields.io/badge/Telegram-wonchoe-A855F7?style=flat-square&labelColor=0B1130&logo=telegram&logoColor=white)](https://t.me/wonchoe) [![Followers](https://img.shields.io/github/followers/wonchoe?style=flat-square&labelColor=0B1130&color=EC4899&logo=github&logoColor=white&label=followers)](https://github.com/wonchoe) [![Traffic sync](https://img.shields.io/github/actions/workflow/status/wonchoe/wonchoe/main.yml?style=flat-square&labelColor=0B1130&color=FFC23C&label=daily%20refresh)](https://github.com/wonchoe/wonchoe/actions/workflows/main.yml)
 
 </div>
 
 ## What I do
 
-I build browser products for people who are mostly not developers - a kid picking a rainbow cursor, a teenager reskinning their YouTube player - and I run everything underneath them myself: Cloudflare at the edge, k3s and Argo CD in the middle, MySQL, MongoDB and object storage at the back.
+I build browser products and run the infrastructure behind them. Custom cursors, YouTube skins, multiplayer games and a multilingual chat up front; Cloudflare, k3s, Argo CD and the data services underneath.
 
-So the interesting problems are rarely the pretty ones. Judging every photo and message in the room before anyone else sees it. Keeping one container image from eating a node. Serving nine figures of requests a month on a budget that would make a funded startup laugh.
+One operator, from the first pixel to the production cluster.
+
+<div align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/impact-mobile.svg">
+    <img src="assets/impact.svg" width="100%" alt="Product scale: cursor.style traffic over 30 complete days and chat activity yesterday; refreshed daily">
+  </picture>
+</div>
 
 ## What I run
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://cursor.style"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/product-cursor-static.svg"><img src="assets/product-cursor.svg" width="100%" alt="Animated cursor.style illustration: colorful custom cursors"></picture></a><br>
+      <a href="https://cursor.style"><b>cursor.style</b></a><br>
+      <sub>A small detail. A browser that feels like yours.</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://youtube-skins.com"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/product-youtube-static.svg"><img src="assets/product-youtube.svg" width="100%" alt="Animated YouTube Skins illustration: a player changes themes"></picture></a><br>
+      <a href="https://youtube-skins.com"><b>YouTube Skins</b></a><br>
+      <sub>Give the player a different personality.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://cursor.style/games/slither"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/product-slither-static.svg"><img src="assets/product-slither.svg" width="100%" alt="Animated Slither illustration: a colorful snake moves through a field"></picture></a><br>
+      <a href="https://cursor.style/games/slither"><b>Slither</b></a><br>
+      <sub>Multiplayer. No install. One more round.</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://terra.cursor.style"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/product-terra-static.svg"><img src="assets/product-terra.svg" width="100%" alt="Animated Terra illustration: a low-poly landscape with water and hills"></picture></a><br>
+      <a href="https://terra.cursor.style"><b>Terra</b></a><br>
+      <sub>A little open world to get lost in. In preview.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><a href="https://wonchoe.github.io/wonchoe/"><b>Try the Cursor Playground</b> ↗</a><br><sub>Pick a pointer, draw a trail, and meet a little character that follows your mouse.</sub></p>
+
+<details>
+<summary><b>All products, audiences and links</b></summary>
 
 | Product | What it is | Reach |
 | :-- | :-- | :-- |
@@ -28,7 +67,9 @@ So the interesting problems are rarely the pretty ones. Judging every photo and 
 | **[agropost.com.ua](https://agropost.com.ua)** | Ukrainian agricultural marketplace: listings, company catalogue, grain logistics | running since 2010 |
 | **[agro-post.com](https://agro-post.com)** | The same platform for the US market | live |
 
-<sub>Counts and ratings are pulled live from the Chrome Web Store every time this page loads.</sub>
+<sub>Chrome Web Store counts and ratings are provided by Shields.io and may be cached.</sub>
+
+</details>
 
 ## The one that got big
 
@@ -48,11 +89,31 @@ So the interesting problems are rarely the pretty ones. Judging every photo and 
 
 <!-- CF-STATS:END -->
 
+## Around the world, close to the edge
+
+<div align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/audience-mobile-static.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/audience-static.svg">
+    <source media="(max-width: 600px)" srcset="assets/audience-mobile.svg">
+    <img src="assets/audience.svg" width="100%" alt="Cloudflare requests by country and territory, cache efficiency and bandwidth over 30 complete UTC days">
+  </picture>
+</div>
+
+<sub>Geography is measured by requests, including automated traffic. The map and cache figures are refreshed from Cloudflare; animation illustrates the data flow.</sub>
+
 ## The one with the moderation problem
 
-The chat grew out of the cursor library and runs in the same pod as the site: rooms, direct messages, photo albums, group voice and WebRTC calls, in 49 languages. Most of the people in it are teenagers, and that one fact decides almost everything about how it has to be built.
+The chat grew out of the cursor library: rooms, direct messages, photo albums, group voice and WebRTC calls, in 49 languages. Every username, message and photo goes through moderation before anyone else sees it.
 
-So the hard part was never the sockets. It is that every username, every message and every photo has to be judged before anyone else sees it, in languages I do not read, in under a second, at a cost per item of approximately nothing.
+<div align="center">
+  <img src="assets/chat.svg" width="100%" alt="The cursor.style chat in numbers">
+</div>
+
+<details>
+<summary><b>How the moderation pipeline works</b></summary>
+
+Most of the people in it are teenagers. The hard part is judging content in languages I do not read, in under a second, at a cost per item of approximately nothing.
 
 | Layer | What runs |
 | :-- | :-- |
@@ -65,9 +126,7 @@ So the hard part was never the sockets. It is that every username, every message
 
 Failing open is the expensive direction here, so an outage at the moderator fails the upload instead of waving it through.
 
-<div align="center">
-  <img src="assets/chat.svg" width="100%" alt="The cursor.style chat in numbers">
-</div>
+</details>
 
 ## The one universities cite
 
@@ -83,10 +142,17 @@ AgroPost has run since 2010: a marketplace, company catalogue and grain-logistic
 ## How it holds together
 
 <div align="center">
-  <img src="assets/architecture.svg" width="100%" alt="Browsers and extensions reach Cloudflare, which fronts a k3s cluster running Laravel, Node and workers over MySQL, MongoDB, Redis, Meilisearch and R2; GitHub Actions and Argo CD deliver it, AWS SSM and External Secrets configure it, Grafana watches it">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/architecture-mobile-static.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/architecture-static.svg">
+    <source media="(max-width: 600px)" srcset="assets/architecture-mobile.svg">
+    <img src="assets/architecture.svg" width="100%" alt="Animated architecture: browsers reach Cloudflare, k3s and the data services; Actions and Argo CD deliver releases, AWS SSM supplies configuration, and Grafana observes the cluster">
+  </picture>
 </div>
 
 Five public brands, one cluster, one operator. Nothing reaches production except through Git: Actions builds and pushes the image, Argo CD syncs the manifests, External Secrets pulls configuration out of AWS Parameter Store, and Cloudflare Zero Trust is the only door into the admin side. If it is not in a repository, it is not running.
+
+<sub>Moving packets illustrate the architecture; they are not a live traffic or availability monitor.</sub>
 
 ## Certifications
 
@@ -133,13 +199,13 @@ Five public brands, one cluster, one operator. Nothing reaches production except
 <div align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/github-mobile.svg">
-    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,527 all-time GitHub commit contributions (public + private); 9,692 all-time contributions (public + private). Commits follow GitHub contribution rules. Public non-fork repository languages by code size: JavaScript 27.4%, PHP 25.4%, HTML 24.9%, Blade 9.4%, Python 6.7%, TypeScript 2.5%, Other 3.6%. Updated 2026-10-10.">
+    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,528 all-time GitHub commit contributions (public + private); 9,693 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 60.3%, Java 26.0%, PHP 8.0%, JavaScript 2.7%, CSS 0.9%, TypeScript 0.6%, Other 1.5%. Updated 2026-10-10.">
   </picture>
 </div>
 
-66 owned repositories, public and private; 9,527 all-time GitHub commit contributions (public + private); 9,692 all-time contributions (public + private).
+66 owned repositories, public and private; 9,528 all-time GitHub commit contributions (public + private); 9,693 all-time contributions (public + private).
 
-<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public, non-fork repositories. Snapshot: 2026-10-10 (UTC).</sub>
+<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public and private, non-fork repositories. Snapshot: 2026-10-10 (UTC).</sub>
 
 <!-- GH-STATS:END -->
 
@@ -169,7 +235,10 @@ Nothing here is a screenshot, and no image is hand-placed pixel art.
 
 - **`assets/hero.svg`** is generated by `tools/build_hero.py`. GitHub serves README images under `default-src 'none'`, so an SVG can never pull a web font down. Every piece of display type is therefore baked into `<path>` outlines from ASCII subsets of Baloo 2 and JetBrains Mono, kept in `tools/fonts/` with their OFL licences. The mascot is embedded as a data URI for the same reason.
 - **`assets/traffic.svg`** is redrawn every night. `update_readme.mjs` asks the Cloudflare GraphQL API for yesterday and for the last 30 days, writes `assets/traffic.json`, and `tools/build_traffic.py` turns that into the chart above - bars, busiest-day marker, aligned figures and all.
-- **`assets/github.svg`** and **`assets/github-mobile.svg`** share one GitHub snapshot. The card shows owned repositories (including forks), all-time commit contributions, and all-time contributions. GitHub limits each query to one year, so the generator sums separate calendar-year windows internally. The language mix covers public, non-fork repositories. Both the image description and the readable summary update from that same snapshot.
+- **`assets/github.svg`** and **`assets/github-mobile.svg`** share one GitHub snapshot. The card shows owned repositories (including forks), all-time commit contributions, and all-time contributions. GitHub limits each query to one year, so the generator sums separate calendar-year windows internally. The language mix covers public and private non-fork repositories when the owner token has access; private repository details are never published. Both the image description and the readable summary update from that same snapshot.
+- **`assets/impact.svg`** combines existing traffic and chat snapshots, with each metric's period shown. **`assets/audience.svg`** maps request counts and cache performance from Cloudflare; no uptime or latency is inferred from those counts.
+- **Product previews and architecture** are self-contained animated SVGs. They use the same outlined type as the other cards, support reduced motion, and run directly inside the GitHub profile without scripts.
+- **Cursor Playground** is a small optional HTML/CSS/JavaScript experiment in `docs/`, published on GitHub Pages. The profile itself stays fully readable on GitHub; the playground adds real pointer, touch and keyboard interaction on its own page.
 - **The numbers in the text** come from the same run, so the readable version stays correct even if images are blocked.
 - **The snake** is redrawn from the contribution graph by a second workflow and published to the `output` branch.
 
@@ -179,6 +248,11 @@ Rebuild the artwork locally with:
 pip install fonttools pillow
 python tools/build_hero.py
 python tools/build_traffic.py
+python tools/build_impact.py
+python tools/build_architecture.py
+python tools/build_showcase.py
+node tools/fetch_edge_stats.mjs
+python tools/build_audience.py
 GITHUB_TOKEN=... python tools/build_github_card.py
 ```
 

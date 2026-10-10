@@ -1,0 +1,13 @@
+Basemap: Natural Earth, 1:110m Admin 0 Countries (public domain).
+https://www.naturalearthdata.com/about/terms-of-use/
+Source retrieved 2026-10-10:
+https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson
+
+natural-earth-110m.json contains projected path outlines and label points.
+Projection: x = longitude + 180; y = 85 - latitude.
+Coordinates rounded to 0.1 degree; consecutive duplicates removed.
+Antarctica omitted from the visual map. The complete geographic request count
+still comes from Cloudflare and includes territories absent at this map scale.
+ISO_A2_EH supplies country codes; Kosovo's KOS is mapped to XK.
+Country outlines are contextual geography and do not express a position on
+territorial claims. No external resources are loaded by the generated SVG.

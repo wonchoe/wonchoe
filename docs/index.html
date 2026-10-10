@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d22">
+  <meta name="description" content="A little cursor playground by Oleksii Semeniuk. Pick a pointer, paint a trail, and make yourself at home.">
+  <title>Cursor Playground · wonchoe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="playground.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#playground">Skip to playground</a>
+  <div class="shell">
+    <header>
+      <a class="wordmark" href="https://github.com/wonchoe"><span class="brand-icon" aria-hidden="true">↗</span>wonchoe<span class="slash">/ playground</span></a>
+      <a class="back" href="https://github.com/wonchoe">Back to GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <div class="intro">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>A SMALL EXPERIMENT IN PERSONALITY</p>
+        <h1>Your browser.<br>Your little <span>universe.</span></h1>
+        <p class="lede">Pick a cursor. Move around. Leave a little color behind.</p>
+      </div>
+
+      <section class="workspace" aria-label="Cursor playground">
+        <div class="toolbar">
+          <div class="themes" role="group" aria-label="Cursor style">
+            <button class="theme" data-theme="comet" aria-pressed="true"><i class="swatch comet" aria-hidden="true"></i>Comet</button>
+            <button class="theme" data-theme="candy" aria-pressed="false"><i class="swatch candy" aria-hidden="true"></i>Candy</button>
+            <button class="theme" data-theme="pixel" aria-pressed="false"><i class="swatch pixel" aria-hidden="true"></i>Pixel</button>
+            <button class="theme" data-theme="orbit" aria-pressed="false"><i class="swatch orbit" aria-hidden="true"></i>Orbit</button>
+          </div>
+          <label class="trail-control"><input id="trail" type="checkbox" checked><span>Color trail</span></label>
+        </div>
+
+        <div id="playground" class="arena" tabindex="0" aria-label="Interactive cursor canvas" aria-describedby="instructions">
+          <canvas id="trails" aria-hidden="true"></canvas>
+          <div class="scene" aria-hidden="true">
+            <div class="orb orb-one"></div><div class="orb orb-two"></div>
+            <div class="sample sample-one"><span class="sample-icon">✦</span><span>Small details.<br><b>Big personality.</b></span></div>
+            <div class="mascot">
+              <div class="eye"><span class="pupil"></span></div>
+              <div class="eye"><span class="pupil"></span></div>
+              <span class="smile"></span>
+            </div>
+            <div class="sample sample-two"><span class="tiny-label">TODAY'S MOOD</span><strong id="mood">a little cosmic</strong><span class="color-dots"><i></i><i></i><i></i></span></div>
+          </div>
+          <div id="pointer" aria-hidden="true"></div>
+          <div class="arena-caption"><span id="hint">Move your pointer here</span><span class="coordinate" id="coordinates">PLAY A LITTLE</span></div>
+        </div>
+
+        <div class="underbar">
+          <p id="instructions">Move or drag to draw. Click for a burst. Keyboard: focus the canvas, use arrow keys and Space.</p>
+          <button id="clear" class="clear">Clear canvas <span aria-hidden="true">↺</span></button>
+        </div>
+        <p id="status" class="sr-only" role="status" aria-live="polite">Comet cursor selected.</p>
+      </section>
+
+      <div class="outro">
+        <p>A tiny taste of what I build at <a href="https://cursor.style">cursor.style</a>.</p>
+        <a class="cta" href="https://cursor.style">Find your everyday cursor <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+
+    <footer><span>Built by <a href="https://github.com/wonchoe">Oleksii Semeniuk</a></span><span>No sign-in. Just a little play.</span></footer>
+  </div>
+  <noscript><p class="no-script">Enable JavaScript to use the playground, or <a href="https://cursor.style">browse cursors on cursor.style</a>.</p></noscript>
+</body>
+</html>

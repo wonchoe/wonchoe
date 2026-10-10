@@ -3,7 +3,7 @@
 
 PROFILE_STATS_TOKEN takes precedence over GITHUB_TOKEN / GH_TOKEN. With no
 token (or --offline), rebuild the committed snapshot without network access.
-Only aggregate counts and public language percentages are written to disk.
+Only aggregate counts and language percentages are written to disk.
 """
 import argparse
 import html
@@ -46,7 +46,7 @@ def normalize_cache(data):
 
 def keep_broader_cache(previous, current):
     """A repo-scoped workflow token must not replace owner totals with a subset."""
-    return any(
+    return (previous.get("language_scope") == "all" and current.get("language_scope") != "all") or any(
         previous[key]["scope"] == "all" and current[key]["scope"] != "all"
         for key in ("repositories", "commits", "activity")
     )
@@ -55,6 +55,7 @@ def keep_broader_cache(previous, current):
 def readme_block(data):
     description = html.escape(summary(data), quote=True)
     readable = html.escape(summary(data, details=False), quote=True)
+    language_coverage = "public and private" if data.get("language_scope") == "all" else "public"
     return f'''{START}
 
 <div align="center">
@@ -66,7 +67,7 @@ def readme_block(data):
 
 {readable}
 
-<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public, non-fork repositories. Snapshot: {data["updated"]} (UTC).</sub>
+<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect {language_coverage}, non-fork repositories. Snapshot: {data["updated"]} (UTC).</sub>
 
 {END}'''
 

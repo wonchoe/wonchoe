@@ -38,6 +38,15 @@ jobs:
       - name: Redraw the traffic card
         run: python tools/build_traffic.py
 
+      - name: Pull audience and cache metrics from Cloudflare
+        run: node tools/fetch_edge_stats.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+
+      - name: Redraw the audience card
+        run: python tools/build_audience.py
+
       - name: Pull the chat figures from cursor.style
         run: node tools/fetch_chat_stats.mjs
         env:
@@ -46,6 +55,12 @@ jobs:
 
       - name: Redraw the chat card
         run: python tools/build_chat_card.py
+
+      - name: Redraw the profile overview and animated previews
+        run: |
+          python tools/build_impact.py
+          python tools/build_architecture.py
+          python tools/build_showcase.py
 
       - name: Redraw the GitHub card
         run: python tools/build_github_card.py
@@ -57,9 +72,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/traffic.json assets/traffic.svg \
-                  assets/github.json assets/github.svg assets/github-mobile.svg \
-                  assets/chat.json assets/chat.svg
+          git add README.md assets/
           git diff --staged --quiet && echo "nothing changed" && exit 0
           git commit -m "Refresh the profile cards"
           git push

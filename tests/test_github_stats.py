@@ -191,11 +191,23 @@ class GitHubDataTests(unittest.TestCase):
         shares = {row["name"]: row["share"] for row in data["languages"]}
         self.assertEqual(shares, {"JavaScript": .6, "HTML": .3, "PHP": .1})
         self.assertAlmostEqual(sum(shares.values()), 1)
-        self.assertEqual(data["language_scope"], "public")
+        self.assertEqual(data["language_scope"], "all")
         for path, payload in api.calls:
             if path == "graphql" and "after" in payload["variables"] and "id" not in payload["variables"]:
-                self.assertIn("privacy: PUBLIC", payload["query"])
+                self.assertIsNone(payload["variables"]["privacy"])
                 self.assertIn("isFork: false", payload["query"])
+
+    def test_private_languages_require_the_owner_token_with_repo_access(self):
+        for scopes, owner in [("read:user", True), (None, True), ("repo", False)]:
+            with self.subTest(scopes=scopes, owner=owner):
+                api = GitHubFixture(scopes=scopes, owner=owner)
+                data = api.fetch()
+                self.assertEqual(data["language_scope"], "public")
+                language_requests = [payload for path, payload in api.calls
+                                     if path == "graphql" and "privacy" in payload["variables"]]
+                self.assertTrue(language_requests)
+                self.assertTrue(all(request["variables"]["privacy"] == "PUBLIC"
+                                    for request in language_requests))
 
     def test_invalid_pagination_fails_instead_of_looping_or_omitting_data(self):
         api = GitHubFixture()
@@ -356,6 +368,9 @@ class GitHubCacheTests(unittest.TestCase):
 
     def test_narrower_token_does_not_replace_previously_complete_counts(self):
         previous = GitHubFixture().fetch()
+        languages_only = copy.deepcopy(previous)
+        languages_only["language_scope"] = "public"
+        self.assertTrue(build_github_card.keep_broader_cache(previous, languages_only))
         for key in ("repositories", "commits", "activity"):
             for narrower_scope in ("public", "visible"):
                 with self.subTest(metric=key, scope=narrower_scope):
