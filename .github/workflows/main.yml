@@ -38,15 +38,6 @@ jobs:
       - name: Redraw the traffic card
         run: python tools/build_traffic.py
 
-      - name: Pull audience and cache metrics from Cloudflare
-        run: node tools/fetch_edge_stats.mjs
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-
-      - name: Redraw the audience card
-        run: python tools/build_audience.py
-
       - name: Pull combined traffic across connected sites
         run: node tools/fetch_portfolio_stats.mjs
         env:
