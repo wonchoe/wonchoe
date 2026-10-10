@@ -42,7 +42,7 @@ So the interesting problems are rarely the pretty ones. Judging every photo and 
 
 <!-- CF-STATS:START -->
 
-**401,124,910** requests &nbsp;·&nbsp; **20,595,516** page views &nbsp;·&nbsp; **3,874,585** unique visitors &nbsp; over the last 30 days
+**397,534,059** requests &nbsp;·&nbsp; **20,468,336** page views &nbsp;·&nbsp; **3,820,369** unique visitors &nbsp; over the last 30 days
 
 <sub>Yesterday alone: 19,760,200 requests from 129,943 people. Refreshed 2026-10-10 by the workflow above.</sub>
 
@@ -133,11 +133,11 @@ Five public brands, one cluster, one operator. Nothing reaches production except
 <div align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/github-mobile.svg">
-    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,525 all-time GitHub commit contributions (public + private); 9,690 all-time contributions (public + private). Commits follow GitHub contribution rules. Public non-fork repository languages by code size: JavaScript 27.7%, PHP 25.7%, HTML 25.2%, Blade 9.5%, Python 5.7%, TypeScript 2.5%, Other 3.7%. Updated 2026-10-10.">
+    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,527 all-time GitHub commit contributions (public + private); 9,692 all-time contributions (public + private). Commits follow GitHub contribution rules. Public non-fork repository languages by code size: JavaScript 27.4%, PHP 25.4%, HTML 24.9%, Blade 9.4%, Python 6.7%, TypeScript 2.5%, Other 3.6%. Updated 2026-10-10.">
   </picture>
 </div>
 
-66 owned repositories, public and private; 9,525 all-time GitHub commit contributions (public + private); 9,690 all-time contributions (public + private).
+66 owned repositories, public and private; 9,527 all-time GitHub commit contributions (public + private); 9,692 all-time contributions (public + private).
 
 <sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public, non-fork repositories. Snapshot: 2026-10-10 (UTC).</sub>
 

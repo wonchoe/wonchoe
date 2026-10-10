@@ -4,23 +4,23 @@
   "metrics": [
     {
       "label": "messages",
-      "value": "4,582,079"
+      "value": "4,585,621"
     },
     {
       "label": "searches",
-      "value": "177,194"
+      "value": "177,393"
     },
     {
       "label": "photos shared",
-      "value": "72,001"
+      "value": "72,037"
     },
     {
       "label": "friendships",
-      "value": "57,458"
+      "value": "57,481"
     },
     {
       "label": "calls connected",
-      "value": "44,251"
+      "value": "44,280"
     },
     {
       "label": "rooms opened",
