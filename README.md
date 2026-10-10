@@ -205,11 +205,11 @@ Five public brands, one cluster, one operator. Nothing reaches production except
 <div align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/github-mobile.svg">
-    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,532 all-time GitHub commit contributions (public + private); 9,697 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 60.3%, Java 26.0%, PHP 8.0%, JavaScript 2.7%, CSS 0.9%, TypeScript 0.6%, Other 1.5%. Updated 2026-10-10.">
+    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,537 all-time GitHub commit contributions (public + private); 9,702 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 60.3%, Java 26.0%, PHP 8.0%, JavaScript 2.7%, CSS 0.9%, TypeScript 0.6%, Other 1.5%. Updated 2026-10-10.">
   </picture>
 </div>
 
-66 owned repositories, public and private; 9,532 all-time GitHub commit contributions (public + private); 9,697 all-time contributions (public + private).
+66 owned repositories, public and private; 9,537 all-time GitHub commit contributions (public + private); 9,702 all-time contributions (public + private).
 
 <sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public and private, non-fork repositories. Snapshot: 2026-10-10 (UTC).</sub>
 
