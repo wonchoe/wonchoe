@@ -50,6 +50,7 @@ jobs:
       - name: Redraw the GitHub card
         run: python tools/build_github_card.py
         env:
+          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit
@@ -57,7 +58,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md assets/traffic.json assets/traffic.svg \
-                  assets/github.json assets/github.svg \
+                  assets/github.json assets/github.svg assets/github-mobile.svg \
                   assets/chat.json assets/chat.svg
           git diff --staged --quiet && echo "nothing changed" && exit 0
           git commit -m "Refresh the profile cards"

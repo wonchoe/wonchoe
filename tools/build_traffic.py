@@ -131,7 +131,7 @@ def build(data):
 
   <path class="rule" d="M{PAD} 230H{W-PAD}" opacity=".7"/>
   <g class="colhead">{heads}</g>
-  {row("last 24 hours", data["last24h"], 276, "r24")}
+  {row("yesterday (UTC)", data["last24h"], 276, "r24")}
   {row("last 30 days", data["last30d"], 300, "r30")}
 </svg>
 '''

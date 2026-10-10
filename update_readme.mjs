@@ -43,7 +43,7 @@ async function getTotals() {
   { viewer { zones(filter: { zoneTag: "${zoneId}" }) {
       last24h: httpRequests1dGroups(limit: 1, filter: { date: "${day(-1)}" }) { ${FIELDS} }
       last30d: httpRequests1dGroups(
-        limit: 1, filter: { date_geq: "${day(-30)}", date_leq: "${day(0)}" }
+        limit: 1, filter: { date_geq: "${day(-30)}", date_leq: "${day(-1)}" }
       ) { ${FIELDS} }
   } } }`);
   return { last24h: flat(zone.last24h[0]), last30d: flat(zone.last30d[0]) };

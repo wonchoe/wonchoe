@@ -1,8 +1,68 @@
 {
+  "schema_version": 2,
   "updated": "2026-10-10",
-  "repos": 30,
-  "contributions": 332,
   "since": "2017-10-18",
+  "repositories": {
+    "total": 66,
+    "public": 30,
+    "private": 36,
+    "scope": "all"
+  },
+  "commits": {
+    "total": 9525,
+    "scope": "all"
+  },
+  "activity": {
+    "total": 9690,
+    "commits": 9525,
+    "restricted": 0,
+    "scope": "all",
+    "period": "all_time",
+    "from": "2017-01-01",
+    "to": "2026-10-10"
+  },
+  "years": [
+    {
+      "year": 2017,
+      "commits": 3
+    },
+    {
+      "year": 2018,
+      "commits": 5
+    },
+    {
+      "year": 2019,
+      "commits": 14
+    },
+    {
+      "year": 2020,
+      "commits": 0
+    },
+    {
+      "year": 2021,
+      "commits": 0
+    },
+    {
+      "year": 2022,
+      "commits": 0
+    },
+    {
+      "year": 2023,
+      "commits": 0
+    },
+    {
+      "year": 2024,
+      "commits": 57
+    },
+    {
+      "year": 2025,
+      "commits": 1990
+    },
+    {
+      "year": 2026,
+      "commits": 7456
+    }
+  ],
   "languages": [
     {
       "name": "JavaScript",
@@ -39,5 +99,6 @@
       "share": 0.036862770093323505,
       "color": "#5B6785"
     }
-  ]
+  ],
+  "language_scope": "public"
 }
