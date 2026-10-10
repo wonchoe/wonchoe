@@ -9,12 +9,12 @@
     "scope": "all"
   },
   "commits": {
-    "total": 9528,
+    "total": 9532,
     "scope": "all"
   },
   "activity": {
-    "total": 9693,
-    "commits": 9528,
+    "total": 9697,
+    "commits": 9532,
     "restricted": 0,
     "scope": "all",
     "period": "all_time",
@@ -60,43 +60,43 @@
     },
     {
       "year": 2026,
-      "commits": 7459
+      "commits": 7463
     }
   ],
   "languages": [
     {
       "name": "Blade",
-      "share": 0.6031993045446279,
+      "share": 0.6031531465272822,
       "color": "#f7523f"
     },
     {
       "name": "Java",
-      "share": 0.25983926105090727,
+      "share": 0.2598193776309028,
       "color": "#b07219"
     },
     {
       "name": "PHP",
-      "share": 0.07993055622169516,
+      "share": 0.07992443977565032,
       "color": "#4F5D95"
     },
     {
       "name": "JavaScript",
-      "share": 0.027072633229314785,
+      "share": 0.02708709270150522,
       "color": "#f1e05a"
     },
     {
       "name": "CSS",
-      "share": 0.00921546710652213,
+      "share": 0.00921476192054571,
       "color": "#663399"
     },
     {
       "name": "TypeScript",
-      "share": 0.005827208691965333,
+      "share": 0.005826762782300229,
       "color": "#3178c6"
     },
     {
       "name": "Other",
-      "share": 0.014915569154967404,
+      "share": 0.014974418661813454,
       "color": "#5B6785"
     }
   ],
