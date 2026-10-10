@@ -47,6 +47,15 @@ jobs:
       - name: Redraw the audience card
         run: python tools/build_audience.py
 
+      - name: Pull combined traffic across connected sites
+        run: node tools/fetch_portfolio_stats.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_PORTFOLIO_API_TOKEN: ${{ secrets.CLOUDFLARE_PORTFOLIO_API_TOKEN }}
+
+      - name: Redraw the combined-sites card
+        run: python tools/build_portfolio.py
+
       - name: Pull the chat figures from cursor.style
         run: node tools/fetch_chat_stats.mjs
         env:
