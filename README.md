@@ -89,9 +89,9 @@ One operator, from the first pixel to the production cluster.
 
 <!-- CF-STATS:START -->
 
-**417,552,636** requests &nbsp;·&nbsp; **20,545,067** page views &nbsp;·&nbsp; **3,700,906** unique visitors &nbsp; over the last 30 days
+**430,879,960** requests &nbsp;·&nbsp; **20,716,672** page views &nbsp;·&nbsp; **3,644,705** unique visitors &nbsp; over the last 30 days
 
-<sub>Yesterday alone: 16,705,115 requests from 173,657 people. Refreshed 2026-10-13 by the workflow above.</sub>
+<sub>Yesterday alone: 17,603,820 requests from 115,821 people. Refreshed 2026-10-14 by the workflow above.</sub>
 
 <!-- CF-STATS:END -->
 
@@ -192,13 +192,13 @@ Five public brands, one cluster, one operator. Nothing reaches production except
 <div align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/github-mobile.svg">
-    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,789 all-time GitHub commit contributions (public + private); 9,954 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 59.6%, Java 25.7%, PHP 8.1%, JavaScript 2.8%, HTML 1.2%, CSS 0.9%, Other 1.6%. Updated 2026-10-13.">
+    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 9,867 all-time GitHub commit contributions (public + private); 10,032 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 59.5%, Java 25.6%, PHP 8.3%, JavaScript 2.9%, HTML 1.2%, CSS 0.9%, Other 1.6%. Updated 2026-10-14.">
   </picture>
 </div>
 
-66 owned repositories, public and private; 9,789 all-time GitHub commit contributions (public + private); 9,954 all-time contributions (public + private).
+66 owned repositories, public and private; 9,867 all-time GitHub commit contributions (public + private); 10,032 all-time contributions (public + private).
 
-<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public and private, non-fork repositories. Snapshot: 2026-10-13 (UTC).</sub>
+<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public and private, non-fork repositories. Snapshot: 2026-10-14 (UTC).</sub>
 
 <!-- GH-STATS:END -->
 
