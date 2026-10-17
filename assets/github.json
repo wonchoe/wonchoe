@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "since": "2017-10-18",
   "repositories": {
     "total": 66,
@@ -9,17 +9,17 @@
     "scope": "all"
   },
   "commits": {
-    "total": 9958,
+    "total": 9963,
     "scope": "all"
   },
   "activity": {
-    "total": 10123,
-    "commits": 9958,
+    "total": 10128,
+    "commits": 9963,
     "restricted": 0,
     "scope": "all",
     "period": "all_time",
     "from": "2017-01-01",
-    "to": "2026-10-16"
+    "to": "2026-10-17"
   },
   "years": [
     {
@@ -60,43 +60,43 @@
     },
     {
       "year": 2026,
-      "commits": 7889
+      "commits": 7894
     }
   ],
   "languages": [
     {
       "name": "Blade",
-      "share": 0.5942461649768083,
+      "share": 0.5942356333610467,
       "color": "#f7523f"
     },
     {
       "name": "Java",
-      "share": 0.2558482653691749,
+      "share": 0.25584366762235905,
       "color": "#b07219"
     },
     {
       "name": "PHP",
-      "share": 0.08332623116441741,
+      "share": 0.08332877422070264,
       "color": "#4F5D95"
     },
     {
       "name": "JavaScript",
-      "share": 0.02868650670789772,
+      "share": 0.028699773971109482,
       "color": "#f1e05a"
     },
     {
       "name": "HTML",
-      "share": 0.012230424227358394,
+      "share": 0.012230204439297817,
       "color": "#e34c26"
     },
     {
       "name": "CSS",
-      "share": 0.009247351065828075,
+      "share": 0.0092471848853818,
       "color": "#663399"
     },
     {
       "name": "Other",
-      "share": 0.01641505648851525,
+      "share": 0.01641476150010252,
       "color": "#5B6785"
     }
   ],
