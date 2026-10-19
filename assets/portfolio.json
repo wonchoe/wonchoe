@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "source": "Cloudflare / connected sites",
   "scope": "accessible_zones",
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "period": {
-    "start": "2026-09-18",
-    "end": "2026-10-17",
+    "start": "2026-09-19",
+    "end": "2026-10-18",
     "days": 30
   },
   "siteCount": 62,
@@ -74,726 +74,721 @@
     "ffaeb3a6d972c88edd4530d9356df050ed7e419220df300f63e611b7fd16b398"
   ],
   "totals": {
-    "requests": 464143877,
-    "cachedRequests": 141919358,
-    "bytes": 4969136314683,
-    "cachedBytes": 2623730769678
+    "requests": 455148212,
+    "cachedRequests": 140425904,
+    "bytes": 4925487103470,
+    "cachedBytes": 2605319316988
   },
   "countries": [
     {
       "code": "SV",
       "name": "El Salvador",
-      "requests": 348171659
+      "requests": 338719138
     },
     {
       "code": "US",
       "name": "United States",
-      "requests": 40499662
+      "requests": 39985093
     },
     {
       "code": "VN",
       "name": "Vietnam",
-      "requests": 6108380
+      "requests": 6166515
     },
     {
       "code": "TR",
       "name": "Türkiye",
-      "requests": 4756983
-    },
-    {
-      "code": "ID",
-      "name": "Indonesia",
-      "requests": 4226177
+      "requests": 4658067
     },
     {
       "code": "BR",
       "name": "Brazil",
-      "requests": 4194557
+      "requests": 4306034
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "requests": 4113526
     },
     {
       "code": "SG",
       "name": "Singapore",
-      "requests": 3389875
+      "requests": 3437267
     },
     {
       "code": "CN",
       "name": "China",
-      "requests": 3346205
-    },
-    {
-      "code": "MX",
-      "name": "Mexico",
-      "requests": 3249538
-    },
-    {
-      "code": "IN",
-      "name": "India",
-      "requests": 3004415
+      "requests": 3389997
     },
     {
       "code": "CA",
       "name": "Canada",
-      "requests": 2801133
+      "requests": 3212476
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "requests": 3147602
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "requests": 2998845
     },
     {
       "code": "FR",
       "name": "France",
-      "requests": 2770014
+      "requests": 2743660
     },
     {
       "code": "RU",
       "name": "Russia",
-      "requests": 2729460
+      "requests": 2631399
     },
     {
       "code": "NL",
       "name": "Netherlands",
-      "requests": 2155928
-    },
-    {
-      "code": "KR",
-      "name": "South Korea",
-      "requests": 1918799
-    },
-    {
-      "code": "PE",
-      "name": "Peru",
-      "requests": 1776794
-    },
-    {
-      "code": "ES",
-      "name": "Spain",
-      "requests": 1731262
+      "requests": 2306255
     },
     {
       "code": "DE",
       "name": "Germany",
-      "requests": 1616941
+      "requests": 1924666
     },
     {
-      "code": "MD",
-      "name": "Moldova",
-      "requests": 1590955
+      "code": "KR",
+      "name": "South Korea",
+      "requests": 1923012
+    },
+    {
+      "code": "PE",
+      "name": "Peru",
+      "requests": 1739628
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "requests": 1721154
     },
     {
       "code": "JP",
       "name": "Japan",
-      "requests": 1486038
+      "requests": 1645943
     },
     {
       "code": "TW",
       "name": "Taiwan",
-      "requests": 1352687
+      "requests": 1616303
+    },
+    {
+      "code": "MD",
+      "name": "Moldova",
+      "requests": 1591143
     },
     {
       "code": "BE",
       "name": "Belgium",
-      "requests": 1325796
-    },
-    {
-      "code": "CO",
-      "name": "Colombia",
-      "requests": 1324977
+      "requests": 1363423
     },
     {
       "code": "GB",
       "name": "United Kingdom",
-      "requests": 1316694
+      "requests": 1304978
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "requests": 1296465
     },
     {
       "code": "TH",
       "name": "Thailand",
-      "requests": 1275512
+      "requests": 1243995
     },
     {
       "code": "MY",
       "name": "Malaysia",
-      "requests": 1174629
+      "requests": 1152303
     },
     {
       "code": "AU",
       "name": "Australia",
-      "requests": 1140310
+      "requests": 1129522
     },
     {
       "code": "AR",
       "name": "Argentina",
-      "requests": 1054233
-    },
-    {
-      "code": "HK",
-      "name": "Hong Kong SAR China",
-      "requests": 804861
+      "requests": 1045302
     },
     {
       "code": "PH",
       "name": "Philippines",
-      "requests": 804384
+      "requests": 800092
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong SAR China",
+      "requests": 795810
     },
     {
       "code": "UY",
       "name": "Uruguay",
-      "requests": 680453
+      "requests": 667151
     },
     {
       "code": "UA",
       "name": "Ukraine",
-      "requests": 493670
+      "requests": 495270
     },
     {
       "code": "PL",
       "name": "Poland",
-      "requests": 442800
-    },
-    {
-      "code": "EC",
-      "name": "Ecuador",
-      "requests": 414550
+      "requests": 455185
     },
     {
       "code": "SA",
       "name": "Saudi Arabia",
-      "requests": 414336
+      "requests": 434993
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "requests": 412415
     },
     {
       "code": "SE",
       "name": "Sweden",
-      "requests": 409241
+      "requests": 402142
     },
     {
       "code": "EG",
       "name": "Egypt",
-      "requests": 375037
+      "requests": 382062
     },
     {
       "code": "PR",
       "name": "Puerto Rico",
-      "requests": 337428
+      "requests": 333045
     },
     {
       "code": "PK",
       "name": "Pakistan",
-      "requests": 331892
+      "requests": 329304
     },
     {
       "code": "AE",
       "name": "United Arab Emirates",
-      "requests": 323814
+      "requests": 322581
     },
     {
       "code": "CL",
       "name": "Chile",
-      "requests": 279276
+      "requests": 281657
     },
     {
       "code": "IT",
       "name": "Italy",
-      "requests": 268297
+      "requests": 274546
     },
     {
       "code": "NZ",
       "name": "New Zealand",
-      "requests": 255907
+      "requests": 256462
     },
     {
       "code": "BD",
       "name": "Bangladesh",
-      "requests": 255047
+      "requests": 255858
     },
     {
       "code": "IR",
       "name": "Iran",
-      "requests": 240153
+      "requests": 247417
     },
     {
       "code": "DO",
       "name": "Dominican Republic",
-      "requests": 226282
-    },
-    {
-      "code": "FI",
-      "name": "Finland",
-      "requests": 195386
-    },
-    {
-      "code": "GT",
-      "name": "Guatemala",
-      "requests": 181846
+      "requests": 233984
     },
     {
       "code": "DZ",
       "name": "Algeria",
-      "requests": 181189
+      "requests": 188737
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "requests": 186543
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "requests": 174161
     },
     {
       "code": "AT",
       "name": "Austria",
-      "requests": 173275
+      "requests": 174015
     },
     {
       "code": "MA",
       "name": "Morocco",
-      "requests": 167509
-    },
-    {
-      "code": "ZA",
-      "name": "South Africa",
-      "requests": 161332
+      "requests": 169364
     },
     {
       "code": "IL",
       "name": "Israel",
-      "requests": 160225
+      "requests": 164651
     },
     {
-      "code": "DK",
-      "name": "Denmark",
-      "requests": 146120
+      "code": "ZA",
+      "name": "South Africa",
+      "requests": 159959
     },
     {
       "code": "PT",
       "name": "Portugal",
-      "requests": 145823
+      "requests": 146488
     },
     {
       "code": "CZ",
       "name": "Czechia",
-      "requests": 139532
+      "requests": 138518
     },
     {
       "code": "BO",
       "name": "Bolivia",
-      "requests": 138803
+      "requests": 137273
     },
     {
       "code": "RO",
       "name": "Romania",
-      "requests": 137338
+      "requests": 137113
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "requests": 136663
     },
     {
       "code": "CR",
       "name": "Costa Rica",
-      "requests": 133637
-    },
-    {
-      "code": "CH",
-      "name": "Switzerland",
-      "requests": 129212
-    },
-    {
-      "code": "BN",
-      "name": "Brunei",
-      "requests": 124762
+      "requests": 129936
     },
     {
       "code": "KZ",
       "name": "Kazakhstan",
-      "requests": 121107
+      "requests": 123963
+    },
+    {
+      "code": "BN",
+      "name": "Brunei",
+      "requests": 123382
     },
     {
       "code": "LT",
       "name": "Lithuania",
-      "requests": 119138
+      "requests": 120040
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "requests": 118945
     },
     {
       "code": "AZ",
       "name": "Azerbaijan",
-      "requests": 114966
+      "requests": 115059
     },
     {
       "code": "VE",
       "name": "Venezuela",
-      "requests": 103931
+      "requests": 103316
     },
     {
       "code": "JO",
       "name": "Jordan",
-      "requests": 99125
+      "requests": 100441
     },
     {
       "code": "MM",
       "name": "Myanmar (Burma)",
-      "requests": 91126
+      "requests": 92564
     },
     {
       "code": "NG",
       "name": "Nigeria",
-      "requests": 90834
+      "requests": 90489
     },
     {
       "code": "UZ",
       "name": "Uzbekistan",
-      "requests": 84732
-    },
-    {
-      "code": "CI",
-      "name": "Côte d’Ivoire",
-      "requests": 84016
+      "requests": 85751
     },
     {
       "code": "HN",
       "name": "Honduras",
-      "requests": 83979
+      "requests": 84711
+    },
+    {
+      "code": "CI",
+      "name": "Côte d’Ivoire",
+      "requests": 80210
     },
     {
       "code": "IE",
       "name": "Ireland",
-      "requests": 79731
+      "requests": 78814
     },
     {
       "code": "KE",
       "name": "Kenya",
-      "requests": 78844
+      "requests": 78003
     },
     {
       "code": "IQ",
       "name": "Iraq",
-      "requests": 77592
+      "requests": 73434
     },
     {
       "code": "BG",
       "name": "Bulgaria",
-      "requests": 71364
+      "requests": 71435
     },
     {
       "code": "HU",
       "name": "Hungary",
-      "requests": 69107
+      "requests": 69137
     },
     {
       "code": "NO",
       "name": "Norway",
-      "requests": 68326
-    },
-    {
-      "code": "QA",
-      "name": "Qatar",
-      "requests": 59856
-    },
-    {
-      "code": "NP",
-      "name": "Nepal",
-      "requests": 58007
-    },
-    {
-      "code": "PA",
-      "name": "Panama",
-      "requests": 57586
+      "requests": 65998
     },
     {
       "code": "LK",
       "name": "Sri Lanka",
-      "requests": 57427
+      "requests": 60002
     },
     {
-      "code": "KW",
-      "name": "Kuwait",
-      "requests": 54314
+      "code": "QA",
+      "name": "Qatar",
+      "requests": 59308
+    },
+    {
+      "code": "PA",
+      "name": "Panama",
+      "requests": 58804
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "requests": 58274
     },
     {
       "code": "TN",
       "name": "Tunisia",
-      "requests": 54192
+      "requests": 54775
     },
     {
       "code": "LV",
       "name": "Latvia",
-      "requests": 54177
+      "requests": 54600
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "requests": 53738
     },
     {
       "code": "OM",
       "name": "Oman",
-      "requests": 52189
-    },
-    {
-      "code": "KH",
-      "name": "Cambodia",
-      "requests": 51603
+      "requests": 52792
     },
     {
       "code": "GR",
       "name": "Greece",
-      "requests": 51464
+      "requests": 52568
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "requests": 52557
     },
     {
       "code": "RS",
       "name": "Serbia",
-      "requests": 46975
+      "requests": 47552
     },
     {
       "code": "BY",
       "name": "Belarus",
-      "requests": 35418
+      "requests": 35289
     },
     {
       "code": "MO",
       "name": "Macao SAR China",
-      "requests": 34499
+      "requests": 34296
     },
     {
       "code": "PY",
       "name": "Paraguay",
-      "requests": 34100
-    },
-    {
-      "code": "SY",
-      "name": "Syria",
-      "requests": 32790
+      "requests": 33011
     },
     {
       "code": "JM",
       "name": "Jamaica",
-      "requests": 32331
+      "requests": 32837
+    },
+    {
+      "code": "SY",
+      "name": "Syria",
+      "requests": 32800
     },
     {
       "code": "SK",
       "name": "Slovakia",
-      "requests": 31176
+      "requests": 31340
     },
     {
       "code": "LB",
       "name": "Lebanon",
-      "requests": 29132
+      "requests": 29795
     },
     {
       "code": "GE",
       "name": "Georgia",
-      "requests": 27655
+      "requests": 27674
     },
     {
       "code": "MN",
       "name": "Mongolia",
-      "requests": 27467
-    },
-    {
-      "code": "GU",
-      "name": "Guam",
-      "requests": 24985
+      "requests": 27313
     },
     {
       "code": "KG",
       "name": "Kyrgyzstan",
-      "requests": 24800
+      "requests": 25162
+    },
+    {
+      "code": "GU",
+      "name": "Guam",
+      "requests": 25104
     },
     {
       "code": "HR",
       "name": "Croatia",
-      "requests": 22518
-    },
-    {
-      "code": "BH",
-      "name": "Bahrain",
-      "requests": 20463
-    },
-    {
-      "code": "TT",
-      "name": "Trinidad & Tobago",
-      "requests": 19983
-    },
-    {
-      "code": "SI",
-      "name": "Slovenia",
-      "requests": 19831
-    },
-    {
-      "code": "AL",
-      "name": "Albania",
-      "requests": 19694
+      "requests": 20767
     },
     {
       "code": "EE",
       "name": "Estonia",
-      "requests": 19440
+      "requests": 20616
+    },
+    {
+      "code": "TT",
+      "name": "Trinidad & Tobago",
+      "requests": 20338
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "requests": 19672
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "requests": 19484
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "requests": 18915
     },
     {
       "code": "NI",
       "name": "Nicaragua",
-      "requests": 18144
+      "requests": 18113
     },
     {
       "code": "LY",
       "name": "Libya",
-      "requests": 17383
-    },
-    {
-      "code": "RW",
-      "name": "Rwanda",
-      "requests": 16859
-    },
-    {
-      "code": "GH",
-      "name": "Ghana",
-      "requests": 16822
+      "requests": 17904
     },
     {
       "code": "ET",
       "name": "Ethiopia",
-      "requests": 16815
+      "requests": 17224
     },
     {
-      "code": "VI",
-      "name": "U.S. Virgin Islands",
-      "requests": 16271
+      "code": "RW",
+      "name": "Rwanda",
+      "requests": 16781
     },
     {
       "code": "SN",
       "name": "Senegal",
-      "requests": 15739
-    },
-    {
-      "code": "BZ",
-      "name": "Belize",
-      "requests": 15507
+      "requests": 15857
     },
     {
       "code": "LC",
       "name": "St. Lucia",
-      "requests": 15447
+      "requests": 15686
     },
     {
-      "code": "RE",
-      "name": "Réunion",
-      "requests": 14908
+      "code": "BZ",
+      "name": "Belize",
+      "requests": 15293
+    },
+    {
+      "code": "VI",
+      "name": "U.S. Virgin Islands",
+      "requests": 15120
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "requests": 15013
     },
     {
       "code": "UG",
       "name": "Uganda",
-      "requests": 14471
-    },
-    {
-      "code": "YE",
-      "name": "Yemen",
-      "requests": 14411
-    },
-    {
-      "code": "MG",
-      "name": "Madagascar",
-      "requests": 14149
+      "requests": 14524
     },
     {
       "code": "AM",
       "name": "Armenia",
-      "requests": 13475
+      "requests": 14434
     },
     {
-      "code": "CM",
-      "name": "Cameroon",
-      "requests": 13386
+      "code": "YE",
+      "name": "Yemen",
+      "requests": 14344
     },
     {
-      "code": "SC",
-      "name": "Seychelles",
-      "requests": 13164
+      "code": "MG",
+      "name": "Madagascar",
+      "requests": 14181
+    },
+    {
+      "code": "RE",
+      "name": "Réunion",
+      "requests": 13481
     },
     {
       "code": "PS",
       "name": "Palestinian Territories",
-      "requests": 12481
+      "requests": 13448
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "requests": 13374
     },
     {
       "code": "BS",
       "name": "Bahamas",
-      "requests": 11325
+      "requests": 11283
     },
     {
       "code": "MU",
       "name": "Mauritius",
-      "requests": 10342
+      "requests": 10344
     },
     {
       "code": "IS",
       "name": "Iceland",
-      "requests": 9864
-    },
-    {
-      "code": "AO",
-      "name": "Angola",
-      "requests": 8726
+      "requests": 9923
     },
     {
       "code": "MQ",
       "name": "Martinique",
-      "requests": 8704
+      "requests": 9264
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "requests": 8755
     },
     {
       "code": "LA",
       "name": "Laos",
-      "requests": 8239
+      "requests": 8325
     },
     {
       "code": "GA",
       "name": "Gabon",
-      "requests": 6277
+      "requests": 6231
     },
     {
       "code": "MT",
       "name": "Malta",
-      "requests": 5908
+      "requests": 5860
     },
     {
       "code": "TC",
       "name": "Turks & Caicos Islands",
-      "requests": 5754
-    },
-    {
-      "code": "GY",
-      "name": "Guyana",
-      "requests": 5333
+      "requests": 5748
     },
     {
       "code": "TZ",
       "name": "Tanzania",
-      "requests": 5232
-    },
-    {
-      "code": "AS",
-      "name": "American Samoa",
-      "requests": 5016
+      "requests": 5529
     },
     {
       "code": "CY",
       "name": "Cyprus",
-      "requests": 4898
+      "requests": 5453
+    },
+    {
+      "code": "GY",
+      "name": "Guyana",
+      "requests": 5334
+    },
+    {
+      "code": "AS",
+      "name": "American Samoa",
+      "requests": 4967
     },
     {
       "code": "BB",
       "name": "Barbados",
-      "requests": 4878
-    },
-    {
-      "code": "BA",
-      "name": "Bosnia & Herzegovina",
-      "requests": 4797
-    },
-    {
-      "code": "KY",
-      "name": "Cayman Islands",
-      "requests": 4721
-    },
-    {
-      "code": "MK",
-      "name": "North Macedonia",
-      "requests": 4684
+      "requests": 4860
     },
     {
       "code": "BW",
       "name": "Botswana",
-      "requests": 4673
+      "requests": 4747
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia & Herzegovina",
+      "requests": 4735
+    },
+    {
+      "code": "KY",
+      "name": "Cayman Islands",
+      "requests": 4719
     },
     {
       "code": "LU",
       "name": "Luxembourg",
-      "requests": 4533
+      "requests": 4465
     },
     {
-      "code": "XK",
-      "name": "Kosovo",
-      "requests": 4203
+      "code": "MK",
+      "name": "North Macedonia",
+      "requests": 4126
     },
     {
       "code": "AD",
       "name": "Andorra",
-      "requests": 3947
+      "requests": 3948
+    },
+    {
+      "code": "XK",
+      "name": "Kosovo",
+      "requests": 3889
     },
     {
       "code": "ZW",
@@ -801,44 +796,39 @@
       "requests": 3852
     },
     {
-      "code": "TG",
-      "name": "Togo",
-      "requests": 3691
-    },
-    {
       "code": "CG",
       "name": "Congo - Brazzaville",
-      "requests": 3528
-    },
-    {
-      "code": "BT",
-      "name": "Bhutan",
-      "requests": 3472
-    },
-    {
-      "code": "GD",
-      "name": "Grenada",
-      "requests": 3456
-    },
-    {
-      "code": "MV",
-      "name": "Maldives",
-      "requests": 3452
+      "requests": 3510
     },
     {
       "code": "ZM",
       "name": "Zambia",
-      "requests": 3419
+      "requests": 3503
     },
     {
       "code": "NC",
       "name": "New Caledonia",
-      "requests": 3412
+      "requests": 3486
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "requests": 3457
+    },
+    {
+      "code": "BT",
+      "name": "Bhutan",
+      "requests": 3444
+    },
+    {
+      "code": "MV",
+      "name": "Maldives",
+      "requests": 3423
     },
     {
       "code": "TJ",
       "name": "Tajikistan",
-      "requests": 3358
+      "requests": 3316
     },
     {
       "code": "AI",
@@ -846,9 +836,24 @@
       "requests": 3105
     },
     {
+      "code": "FM",
+      "name": "Micronesia",
+      "requests": 3052
+    },
+    {
+      "code": "GD",
+      "name": "Grenada",
+      "requests": 3034
+    },
+    {
+      "code": "AF",
+      "name": "Afghanistan",
+      "requests": 2930
+    },
+    {
       "code": "FJ",
       "name": "Fiji",
-      "requests": 2862
+      "requests": 2919
     },
     {
       "code": "FO",
@@ -856,44 +861,34 @@
       "requests": 2774
     },
     {
-      "code": "AF",
-      "name": "Afghanistan",
-      "requests": 2670
-    },
-    {
-      "code": "IM",
-      "name": "Isle of Man",
-      "requests": 2606
+      "code": "CU",
+      "name": "Cuba",
+      "requests": 2411
     },
     {
       "code": "AW",
       "name": "Aruba",
-      "requests": 2415
-    },
-    {
-      "code": "CU",
-      "name": "Cuba",
-      "requests": 2370
+      "requests": 2389
     },
     {
       "code": "ML",
       "name": "Mali",
-      "requests": 2313
-    },
-    {
-      "code": "BJ",
-      "name": "Benin",
-      "requests": 2235
+      "requests": 2330
     },
     {
       "code": "BF",
       "name": "Burkina Faso",
-      "requests": 2198
+      "requests": 2211
+    },
+    {
+      "code": "IM",
+      "name": "Isle of Man",
+      "requests": 2209
     },
     {
       "code": "GM",
       "name": "Gambia",
-      "requests": 1976
+      "requests": 1975
     },
     {
       "code": "MP",
@@ -901,59 +896,64 @@
       "requests": 1878
     },
     {
-      "code": "SR",
-      "name": "Suriname",
-      "requests": 1802
+      "code": "BJ",
+      "name": "Benin",
+      "requests": 1827
     },
     {
-      "code": "DM",
-      "name": "Dominica",
-      "requests": 1712
+      "code": "SR",
+      "name": "Suriname",
+      "requests": 1827
     },
     {
       "code": "CW",
       "name": "Curaçao",
-      "requests": 1690
+      "requests": 1667
     },
     {
       "code": "NA",
       "name": "Namibia",
-      "requests": 1668
+      "requests": 1654
     },
     {
-      "code": "FM",
-      "name": "Micronesia",
-      "requests": 1660
+      "code": "DM",
+      "name": "Dominica",
+      "requests": 1458
     },
     {
       "code": "SB",
       "name": "Solomon Islands",
-      "requests": 1324
-    },
-    {
-      "code": "SL",
-      "name": "Sierra Leone",
-      "requests": 1284
+      "requests": 1384
     },
     {
       "code": "CD",
       "name": "Congo - Kinshasa",
-      "requests": 1174
+      "requests": 1381
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leone",
+      "requests": 1318
+    },
+    {
+      "code": "SC",
+      "name": "Seychelles",
+      "requests": 1241
     },
     {
       "code": "BM",
       "name": "Bermuda",
-      "requests": 1095
+      "requests": 1086
+    },
+    {
+      "code": "VU",
+      "name": "Vanuatu",
+      "requests": 1071
     },
     {
       "code": "CK",
       "name": "Cook Islands",
       "requests": 1044
-    },
-    {
-      "code": "VU",
-      "name": "Vanuatu",
-      "requests": 973
     },
     {
       "code": "MC",
@@ -963,32 +963,27 @@
     {
       "code": "MZ",
       "name": "Mozambique",
-      "requests": 863
+      "requests": 866
     },
     {
       "code": "HT",
       "name": "Haiti",
-      "requests": 819
+      "requests": 831
     },
     {
       "code": "MW",
       "name": "Malawi",
-      "requests": 751
+      "requests": 759
     },
     {
       "code": "SD",
       "name": "Sudan",
-      "requests": 732
+      "requests": 722
     },
     {
       "code": "ME",
       "name": "Montenegro",
-      "requests": 698
-    },
-    {
-      "code": "GP",
-      "name": "Guadeloupe",
-      "requests": 632
+      "requests": 702
     },
     {
       "code": "PF",
@@ -996,49 +991,49 @@
       "requests": 603
     },
     {
-      "code": "PW",
-      "name": "Palau",
-      "requests": 594
-    },
-    {
       "code": "MR",
       "name": "Mauritania",
-      "requests": 584
+      "requests": 597
     },
     {
       "code": "SO",
       "name": "Somalia",
-      "requests": 576
+      "requests": 583
     },
     {
       "code": "SZ",
       "name": "Eswatini",
-      "requests": 549
+      "requests": 551
+    },
+    {
+      "code": "PW",
+      "name": "Palau",
+      "requests": 543
+    },
+    {
+      "code": "GP",
+      "name": "Guadeloupe",
+      "requests": 498
     },
     {
       "code": "VG",
       "name": "British Virgin Islands",
-      "requests": 510
+      "requests": 442
     },
     {
       "code": "LS",
       "name": "Lesotho",
-      "requests": 427
-    },
-    {
-      "code": "AG",
-      "name": "Antigua & Barbuda",
-      "requests": 354
+      "requests": 426
     },
     {
       "code": "AX",
       "name": "Åland Islands",
-      "requests": 337
+      "requests": 344
     },
     {
-      "code": "LR",
-      "name": "Liberia",
-      "requests": 337
+      "code": "PG",
+      "name": "Papua New Guinea",
+      "requests": 344
     },
     {
       "code": "SS",
@@ -1046,49 +1041,54 @@
       "requests": 321
     },
     {
-      "code": "GF",
-      "name": "French Guiana",
-      "requests": 311
-    },
-    {
       "code": "NE",
       "name": "Niger",
-      "requests": 309
+      "requests": 317
     },
     {
-      "code": "GI",
-      "name": "Gibraltar",
-      "requests": 292
+      "code": "GF",
+      "name": "French Guiana",
+      "requests": 302
     },
     {
-      "code": "GN",
-      "name": "Guinea",
-      "requests": 288
-    },
-    {
-      "code": "CV",
-      "name": "Cape Verde",
-      "requests": 281
+      "code": "AG",
+      "name": "Antigua & Barbuda",
+      "requests": 300
     },
     {
       "code": "JE",
       "name": "Jersey",
-      "requests": 274
+      "requests": 298
+    },
+    {
+      "code": "GI",
+      "name": "Gibraltar",
+      "requests": 293
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "requests": 293
+    },
+    {
+      "code": "CV",
+      "name": "Cape Verde",
+      "requests": 291
     },
     {
       "code": "KN",
       "name": "St. Kitts & Nevis",
-      "requests": 274
-    },
-    {
-      "code": "PG",
-      "name": "Papua New Guinea",
-      "requests": 267
+      "requests": 273
     },
     {
       "code": "TO",
       "name": "Tonga",
       "requests": 241
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "requests": 238
     },
     {
       "code": "WF",
@@ -1098,7 +1098,7 @@
     {
       "code": "BQ",
       "name": "Caribbean Netherlands",
-      "requests": 176
+      "requests": 177
     },
     {
       "code": "GG",
@@ -1108,7 +1108,7 @@
     {
       "code": "VC",
       "name": "St. Vincent & Grenadines",
-      "requests": 84
+      "requests": 82
     },
     {
       "code": "TD",
@@ -1118,57 +1118,57 @@
     {
       "code": "TL",
       "name": "Timor-Leste",
-      "requests": 67
+      "requests": 59
     },
     {
       "code": "DJ",
       "name": "Djibouti",
-      "requests": 55
+      "requests": 57
     },
     {
       "code": "MF",
       "name": "St. Martin",
-      "requests": 52
+      "requests": 53
     },
     {
       "code": "SX",
       "name": "Sint Maarten",
-      "requests": 52
+      "requests": 49
     },
     {
       "code": "YT",
       "name": "Mayotte",
-      "requests": 44
+      "requests": 42
     },
     {
       "code": "GW",
       "name": "Guinea-Bissau",
-      "requests": 37
+      "requests": 39
     },
     {
       "code": "ST",
       "name": "São Tomé & Príncipe",
-      "requests": 34
+      "requests": 37
     },
     {
       "code": "GQ",
       "name": "Equatorial Guinea",
-      "requests": 29
+      "requests": 31
     },
     {
       "code": "BI",
       "name": "Burundi",
-      "requests": 15
+      "requests": 14
     },
     {
       "code": "KM",
       "name": "Comoros",
-      "requests": 13
+      "requests": 12
     },
     {
       "code": "CF",
       "name": "Central African Republic",
-      "requests": 9
+      "requests": 10
     },
     {
       "code": "WS",
@@ -1183,7 +1183,7 @@
     {
       "code": "LI",
       "name": "Liechtenstein",
-      "requests": 5
+      "requests": 6
     },
     {
       "code": "NR",
@@ -1196,14 +1196,14 @@
       "requests": 5
     },
     {
-      "code": "MS",
-      "name": "Montserrat",
+      "code": "MH",
+      "name": "Marshall Islands",
       "requests": 3
     },
     {
-      "code": "MH",
-      "name": "Marshall Islands",
-      "requests": 2
+      "code": "MS",
+      "name": "Montserrat",
+      "requests": 3
     },
     {
       "code": "TV",
@@ -1221,5 +1221,5 @@
       "requests": 1
     }
   ],
-  "unknownRequests": 6633
+  "unknownRequests": 6562
 }
