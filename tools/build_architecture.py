@@ -117,7 +117,7 @@ def aws_project(x, y, width, mobile=False):
     center = x + width / 2
     return "".join([
         f'<rect class="group aws" x="{x}" y="{y}" width="{width}" height="214" rx="14"/>',
-        T.run("mono", "AWS / IMAGE UPLOADS", 11.5, x + 16, y + 23,
+        T.run("mono", "AWS / API ARCHITECTURE", 11.5, x + 16, y + 23,
               cls="group-label"),
         chip(x + 14, y + 36, width - 28, 42, "API Gateway", "upload URL endpoint", "aws", mobile),
         flow(f"M{center} {y + 78}V{y + 90}", center, y + 96,
