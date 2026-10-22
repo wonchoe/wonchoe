@@ -28,12 +28,24 @@ CLUSTER_CHIPS = [
     ("Node", "chat, presence, calls"),
     ("Workers", "queues, cron, moderation"),
 ]
-DELIVERY_CHIPS = [("GitHub Actions", "build, scan, push"), ("Argo CD", "GitOps sync")]
 CONFIG_CHIPS = [("AWS SSM", "Parameter Store"), ("External Secrets", "SSM into the cluster")]
 STATE_CHIPS = [
     ("MySQL", "accounts"), ("MongoDB", "messages"), ("Redis", "queues"),
     ("Meilisearch", "search"), ("R2", "media"),
 ]
+
+
+def chip(x, y, width, height, name, subtitle, kind, mobile=False):
+    name_size = min(13 if mobile else 12.5,
+                    (width - 14) / T.width("mono", name, 1, 0))
+    sub_size = min(10.2 if mobile else 10,
+                   (width - 12) / T.width("mono", subtitle, 1, 0))
+    return (f'<rect class="chip {kind}" x="{x:.1f}" y="{y:.1f}" '
+            f'width="{width:.1f}" height="{height:.1f}" rx="9"/>'
+            + T.run("mono", name, name_size, x + width / 2,
+                    y + height / 2 - 2, anchor="middle", cls="primary")
+            + T.run("mono", subtitle, sub_size, x + width / 2,
+                    y + height / 2 + 14, anchor="middle", cls="secondary"))
 
 
 def box(x, y, width, height, label, kind, chips, cols=2, mobile=False):
@@ -50,18 +62,7 @@ def box(x, y, width, height, label, kind, chips, cols=2, mobile=False):
         for col_index, (name, subtitle) in enumerate(row):
             cx = x + pad + col_index * (cell_width + gap)
             cy = y + 36 + row_index * (cell_height + gap)
-            name_size = 13 if mobile else 12.5
-            sub_size = 10.2 if mobile else 10
-            name_size = min(name_size, (cell_width - 14) / T.width("mono", name, 1, 0))
-            sub_size = min(sub_size, (cell_width - 12) / T.width("mono", subtitle, 1, 0))
-            out.extend([
-                f'<rect class="chip {kind}" x="{cx:.1f}" y="{cy:.1f}" '
-                f'width="{cell_width:.1f}" height="{cell_height:.1f}" rx="9"/>',
-                T.run("mono", name, name_size, cx + cell_width / 2,
-                      cy + cell_height / 2 - 2, anchor="middle", cls="primary"),
-                T.run("mono", subtitle, sub_size, cx + cell_width / 2,
-                      cy + cell_height / 2 + 14, anchor="middle", cls="secondary"),
-            ])
+            out.append(chip(cx, cy, cell_width, cell_height, name, subtitle, kind, mobile))
     return "".join(out)
 
 
@@ -75,12 +76,57 @@ def flow(path, x, y, direction="down", kind="request", delay=0):
             f'<path class="arrowhead" d="{head}"/></g>')
 
 
+def delivery(x, y, width, mobile=False):
+    """Actions dispatches to three runner options, then GitOps delivers."""
+    center = x + width / 2
+    dispatch, collect = x + 8, x + width - 8
+    runner_x, runner_width = x + 28, width - 56
+    parts = [
+        f'<rect class="group delivery" x="{x}" y="{y}" width="{width}" height="350" rx="14"/>',
+        T.run("mono", "HOW IT SHIPS", 12 if mobile else 11.5,
+              x + 16, y + 23, 0.4, cls="group-label"),
+        chip(x + 14, y + 36, width - 28, 48, "GitHub Actions", "build, scan, push", "delivery", mobile),
+        chip(x + 14, y + 286, width - 28, 50, "Argo CD", "GitOps sync", "delivery", mobile),
+        T.run("mono", "images + Git", 10, center, y + 273,
+              anchor="middle", cls="secondary"),
+    ]
+    runners = [("GitHub", "hosted runner"), ("CodeBuild", "self-hosted"), ("EC2 Spot", "self-hosted")]
+    for index, (name, subtitle) in enumerate(runners):
+        runner_y = y + 110 + index * 52
+        runner_center = runner_y + 21
+        parts.append(chip(runner_x, runner_y, runner_width, 42, name, subtitle, "delivery", mobile))
+        parts.append(flow(f"M{center} {y + 84}V{y + 98}H{dispatch}V{runner_center}H{runner_x - 6}",
+                          runner_x, runner_center, "right", "release", -0.3 - index * 0.2))
+        parts.append(flow(f"M{runner_x + runner_width} {runner_center}H{collect - 6}",
+                          collect, runner_center, "right", "release", -0.7))
+    parts.append(flow(f"M{collect} {y + 131}V{y + 280}H{center}", center, y + 286,
+                      kind="release", delay=-1))
+    return "".join(parts)
+
+
 def user_box(x, y, width):
     return (f'<rect class="chip edge" x="{x}" y="{y}" width="{width}" height="54" rx="12"/>'
             + T.run("mono", "browsers, extensions, mobile web", 12.5,
                     x + width / 2, y + 23, anchor="middle", cls="primary")
             + T.run("mono", "five public brands", 10.5,
                     x + width / 2, y + 41, anchor="middle", cls="secondary"))
+
+
+def aws_project(x, y, width, mobile=False):
+    """The upload API signs URLs; browsers upload directly to S3."""
+    center = x + width / 2
+    return "".join([
+        f'<rect class="group aws" x="{x}" y="{y}" width="{width}" height="214" rx="14"/>',
+        T.run("mono", "AWS / IMAGE UPLOADS", 11.5, x + 16, y + 23,
+              cls="group-label"),
+        chip(x + 14, y + 36, width - 28, 42, "API Gateway", "upload URL endpoint", "aws", mobile),
+        flow(f"M{center} {y + 78}V{y + 90}", center, y + 96,
+             kind="request", delay=-0.4),
+        chip(x + 14, y + 96, width - 28, 42, "Lambda", "presigned URLs", "aws", mobile),
+        flow(f"M{center} {y + 138}V{y + 150}", center, y + 156,
+             kind="request", delay=-0.8),
+        chip(x + 14, y + 156, width - 28, 44, "S3", "direct browser upload", "aws", mobile),
+    ])
 
 
 def watcher(x, y, width):
@@ -97,8 +143,11 @@ def desktop_layout():
         box(270, 202, 460, 156, "01 / CLOUDFLARE", "edge", CLOUD_CHIPS),
         flow("M500 358V390", 500, 396, delay=-0.6),
         box(270, 396, 460, 156, "02 / K3S CLUSTER", "cluster", CLUSTER_CHIPS),
-        box(28, 396, 210, 156, "HOW IT SHIPS", "delivery", DELIVERY_CHIPS, cols=1),
-        flow("M238 474H264", 270, 474, "right", "release", -0.5),
+        delivery(28, 202, 210),
+        flow("M238 513H264", 270, 513, "right", "release", -0.5),
+        aws_project(762, 164, 210),
+        flow("M500 382H746V221H770", 776, 221, "right", delay=-0.9),
+        '<circle class="cyan" cx="500" cy="382" r="3"/>',
         box(762, 396, 210, 156, "CONFIGURATION", "delivery", CONFIG_CHIPS, cols=1),
         flow("M762 474H736", 730, 474, "left", "release", -0.8),
         flow("M500 552V592", 500, 598, kind="storage", delay=-1),
@@ -106,7 +155,7 @@ def desktop_layout():
         watcher(762, 626, 210),
         flow("M730 528H746V656H756", 762, 656, "right", "telemetry", -1.3),
         T.run("mono", "REQUESTS", 10, 518, 186, 0.6, cls="cyan"),
-        T.run("mono", "ORIGIN", 10, 518, 382, 0.6, cls="cyan"),
+        T.run("mono", "ORIGIN", 10, 518, 373, 0.6, cls="cyan"),
         T.run("mono", "PERSIST", 10, 518, 582, 0.6, cls="pink"),
     ]
     return "".join(parts)
@@ -119,14 +168,19 @@ def mobile_layout():
         box(24, 216, 432, 174, "01 / CLOUDFLARE", "edge", CLOUD_CHIPS, mobile=True),
         flow("M240 390V428", 240, 434, delay=-0.6),
         box(24, 434, 432, 174, "02 / K3S CLUSTER", "cluster", CLUSTER_CHIPS, mobile=True),
-        box(24, 654, 202, 162, "HOW IT SHIPS", "delivery", DELIVERY_CHIPS, cols=1, mobile=True),
-        flow("M124 654V614", 124, 608, "up", "release", -0.5),
+        delivery(24, 654, 202, mobile=True),
+        flow("M226 965H232V628H124V614", 124, 608, "up", "release", -0.5),
         box(254, 654, 202, 162, "CONFIGURATION", "delivery", CONFIG_CHIPS, cols=1, mobile=True),
         flow("M356 654V614", 356, 608, "up", "release", -0.8),
-        flow("M240 608V856", 240, 862, kind="storage", delay=-1),
-        box(24, 862, 432, 170, "03 / STATE", "data", STATE_CHIPS, cols=3, mobile=True),
-        watcher(126, 1080, 228),
-        flow("M456 580H469V1110H360", 354, 1110, "left", "telemetry", -1.3),
+        aws_project(254, 838, 202, mobile=True),
+        flow("M240 422H462V895H448", 442, 895, "left", delay=-0.9),
+        '<circle class="cyan" cx="240" cy="422" r="3"/>',
+        flow("M240 608V1108", 240, 1114, kind="storage", delay=-1),
+        box(24, 1114, 432, 170, "03 / STATE", "data", STATE_CHIPS, cols=3, mobile=True),
+        watcher(126, 1332, 228),
+        # Bridge over the origin-to-AWS route without implying a junction.
+        flow("M456 580H458C458 572 466 572 466 580H469V1362H360",
+             354, 1362, "left", "telemetry", -1.3),
         T.run("mono", "requests", 10.5, 256, 201, cls="cyan"),
         T.run("mono", "origin", 10.5, 256, 416, cls="cyan"),
     ]
@@ -141,7 +195,7 @@ def build(mobile=False, static=False):
     embedded SVG's own stylesheet, so the internal media query is insufficient.
     """
     T.reset()
-    width, height = (480, 1208) if mobile else (1000, 764)
+    width, height = (480, 1460) if mobile else (1000, 764)
     pad = 24 if mobile else 40
     heading = T.run("display", "One operator. One cluster.", 28 if mobile else 31,
                     pad, 48, cls="primary")
@@ -166,7 +220,11 @@ def build(mobile=False, static=False):
   viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
   <title id="title">One operator. One cluster.</title>
   <desc id="desc">Browsers reach Cloudflare, then a k3s cluster running Traefik, Laravel, Node and workers.
-  GitHub Actions and Argo CD deliver releases; AWS SSM and External Secrets supply configuration.
+  GitHub Actions dispatches builds to GitHub-hosted runners or self-hosted runners in AWS CodeBuild or on EC2 Spot instances.
+  Builds publish images and update Git manifests; Argo CD syncs releases into the cluster.
+  AWS SSM and External Secrets supply configuration.
+  The origin route also branches to the AWS image-upload project's API Gateway.
+  API Gateway invokes Lambda, which signs S3 upload URLs; browsers upload files directly to S3.
   MySQL, MongoDB, Redis, Meilisearch and R2 hold state. Grafana receives observability data.
   {path_label} illustrate direction, not live traffic.</desc>
   <defs>
@@ -184,6 +242,7 @@ def build(mobile=False, static=False):
     .edge.group {{ stroke:#224665 }} .edge.chip {{ stroke:#3489A9 }}
     .cluster.group {{ stroke:#533783; fill:#171039 }} .cluster.chip {{ stroke:#8057BB }}
     .delivery.group {{ stroke:#594923 }} .delivery.chip {{ stroke:#A17D32 }}
+    .aws.group {{ stroke:#664326 }} .aws.chip {{ stroke:#C78B4A }}
     .data.group {{ stroke:#582C4D }} .data.chip {{ stroke:#A54E8B }}
     .observe.chip {{ stroke:#479C89 }}
     .connection {{ color:#65D4FF }} .release {{ color:#FFD477 }}

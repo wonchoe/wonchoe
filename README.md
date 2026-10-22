@@ -139,11 +139,13 @@ AgroPost has run since 2010: a marketplace, company catalogue and grain-logistic
     <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/architecture-mobile-static.svg">
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/architecture-static.svg">
     <source media="(max-width: 600px)" srcset="assets/architecture-mobile.svg">
-    <img src="assets/architecture.svg" width="100%" alt="Animated architecture: browsers reach Cloudflare, k3s and the data services; Actions and Argo CD deliver releases, AWS SSM supplies configuration, and Grafana observes the cluster">
+    <img src="assets/architecture.svg" width="100%" alt="Animated architecture: browsers reach Cloudflare, k3s and the data services; GitHub Actions builds on GitHub-hosted runners or self-hosted runners in AWS CodeBuild or on EC2 Spot, Argo CD syncs releases, AWS SSM supplies configuration, and Grafana observes the cluster. A separate AWS project uses API Gateway and Lambda for presigned upload URLs and S3 for direct browser uploads">
   </picture>
 </div>
 
-Five public brands, one cluster, one operator. Nothing reaches production except through Git: Actions builds and pushes the image, Argo CD syncs the manifests, External Secrets pulls configuration out of AWS Parameter Store, and Cloudflare Zero Trust is the only door into the admin side. If it is not in a repository, it is not running.
+Five public brands, one cluster, one operator. Nothing reaches production except through Git: GitHub Actions runs build jobs on GitHub-hosted runners or self-hosted runners in AWS CodeBuild or on EC2 Spot instances, then pushes the images and updates the Git manifests. Argo CD syncs those manifests, External Secrets pulls configuration out of AWS Parameter Store, and Cloudflare Zero Trust is the only door into the admin side. If it is not in a repository, it is not running.
+
+A separate [image-processing project](https://github.com/wonchoe/image-processing) uses API Gateway and Lambda to generate presigned upload URLs; browsers upload files directly to S3.
 
 <sub>Moving packets illustrate the architecture; they are not a live traffic or availability monitor.</sub>
 
