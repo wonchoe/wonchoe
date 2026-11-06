@@ -1,12 +1,6 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "days": [
-    {
-      "date": "2026-10-06",
-      "requests": 21550182,
-      "pageViews": 644696,
-      "uniques": 223048
-    },
     {
       "date": "2026-10-07",
       "requests": 20578946,
@@ -180,16 +174,22 @@
       "requests": 10360073,
       "pageViews": 722070,
       "uniques": 253824
+    },
+    {
+      "date": "2026-11-05",
+      "requests": 10612931,
+      "pageViews": 1069352,
+      "uniques": 221303
     }
   ],
   "last24h": {
-    "requests": 10360073,
-    "pageViews": 722070,
-    "uniques": 253824
+    "requests": 10612931,
+    "pageViews": 1069352,
+    "uniques": 221303
   },
   "last30d": {
-    "requests": 310954168,
-    "pageViews": 13775391,
-    "uniques": 5665390
+    "requests": 300016917,
+    "pageViews": 14200047,
+    "uniques": 5618557
   }
 }
