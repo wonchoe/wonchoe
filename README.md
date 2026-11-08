@@ -89,9 +89,9 @@ One operator, from the first pixel to the production cluster.
 
 <!-- CF-STATS:START -->
 
-**288,113,727** requests &nbsp;·&nbsp; **13,977,797** page views &nbsp;·&nbsp; **5,563,618** unique visitors &nbsp; over the last 30 days
+**273,158,310** requests &nbsp;·&nbsp; **13,791,401** page views &nbsp;·&nbsp; **5,535,418** unique visitors &nbsp; over the last 30 days
 
-<sub>Yesterday alone: 8,675,755 requests from 177,685 people. Refreshed 2026-11-07 by the workflow above.</sub>
+<sub>Yesterday alone: 6,048,497 requests from 151,241 people. Refreshed 2026-11-08 by the workflow above.</sub>
 
 <!-- CF-STATS:END -->
 
@@ -194,13 +194,13 @@ A separate [image-processing project](https://github.com/wonchoe/image-processin
 <div align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/github-mobile.svg">
-    <img src="assets/github.svg" width="100%" alt="67 owned repositories, public and private; 11,461 all-time GitHub commit contributions (public + private); 11,627 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 59.7%, Java 23.7%, PHP 8.1%, JavaScript 2.8%, Dart 2.1%, HTML 1.1%, Other 2.5%. Updated 2026-11-07.">
+    <img src="assets/github.svg" width="100%" alt="66 owned repositories, public and private; 11,509 all-time GitHub commit contributions (public + private); 11,675 all-time contributions (public + private). Commits follow GitHub contribution rules. Public and private non-fork repository languages by code size: Blade 61.3%, Java 24.4%, PHP 7.4%, JavaScript 2.4%, Dart 2.1%, CSS 0.8%, Other 1.7%. Updated 2026-11-08.">
   </picture>
 </div>
 
-67 owned repositories, public and private; 11,461 all-time GitHub commit contributions (public + private); 11,627 all-time contributions (public + private).
+66 owned repositories, public and private; 11,509 all-time GitHub commit contributions (public + private); 11,675 all-time contributions (public + private).
 
-<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public and private, non-fork repositories. Snapshot: 2026-11-07 (UTC).</sub>
+<sub>Commit counts follow <a href="https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference">GitHub contribution rules</a>; they are not a count of every commit on every branch. Languages reflect public and private, non-fork repositories. Snapshot: 2026-11-08 (UTC).</sub>
 
 <!-- GH-STATS:END -->
 
