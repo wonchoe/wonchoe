@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "since": "2017-10-18",
   "repositories": {
     "total": 66,
@@ -9,17 +9,17 @@
     "scope": "all"
   },
   "commits": {
-    "total": 11562,
+    "total": 11568,
     "scope": "all"
   },
   "activity": {
-    "total": 11728,
-    "commits": 11562,
+    "total": 11734,
+    "commits": 11568,
     "restricted": 0,
     "scope": "all",
     "period": "all_time",
     "from": "2017-01-01",
-    "to": "2026-11-14"
+    "to": "2026-11-15"
   },
   "years": [
     {
@@ -60,43 +60,43 @@
     },
     {
       "year": 2026,
-      "commits": 9493
+      "commits": 9499
     }
   ],
   "languages": [
     {
       "name": "Blade",
-      "share": 0.6125248481847367,
+      "share": 0.6125161303812601,
       "color": "#f7523f"
     },
     {
       "name": "Java",
-      "share": 0.24366183404313385,
+      "share": 0.24365822120302433,
       "color": "#b07219"
     },
     {
       "name": "PHP",
-      "share": 0.07424565905348579,
+      "share": 0.0742590211956189,
       "color": "#4F5D95"
     },
     {
       "name": "JavaScript",
-      "share": 0.023663363660456675,
+      "share": 0.023663012797344715,
       "color": "#f1e05a"
     },
     {
       "name": "Dart",
-      "share": 0.021298981675743966,
+      "share": 0.02129866586996506,
       "color": "#00B4AB"
     },
     {
       "name": "CSS",
-      "share": 0.007814137840130958,
+      "share": 0.007814021977789526,
       "color": "#663399"
     },
     {
       "name": "Other",
-      "share": 0.016791175542311992,
+      "share": 0.016790926574997422,
       "color": "#5B6785"
     }
   ],
