@@ -1,118 +1,112 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "days": [
     {
-      "date": "2026-10-18",
-      "requests": 5145422,
-      "pageViews": 343713,
-      "uniques": 156291
-    },
-    {
       "date": "2026-10-19",
-      "requests": 5874304,
-      "pageViews": 429663,
-      "uniques": 173651
+      "requests": 5874503,
+      "pageViews": 429665,
+      "uniques": 173612
     },
     {
       "date": "2026-10-20",
-      "requests": 6142351,
-      "pageViews": 464303,
+      "requests": 6141982,
+      "pageViews": 464286,
       "uniques": 178575
     },
     {
       "date": "2026-10-21",
-      "requests": 6372059,
-      "pageViews": 485726,
-      "uniques": 187327
+      "requests": 6372310,
+      "pageViews": 485714,
+      "uniques": 187361
     },
     {
       "date": "2026-10-22",
-      "requests": 5508095,
-      "pageViews": 504318,
+      "requests": 5508111,
+      "pageViews": 504316,
       "uniques": 201350
     },
     {
       "date": "2026-10-23",
-      "requests": 5352603,
-      "pageViews": 414845,
+      "requests": 5352835,
+      "pageViews": 414857,
       "uniques": 287214
     },
     {
       "date": "2026-10-24",
-      "requests": 3590323,
-      "pageViews": 301944,
+      "requests": 3590322,
+      "pageViews": 301943,
       "uniques": 346418
     },
     {
       "date": "2026-10-25",
-      "requests": 4481867,
+      "requests": 4481842,
       "pageViews": 295929,
       "uniques": 378393
     },
     {
       "date": "2026-10-26",
-      "requests": 5792567,
-      "pageViews": 417671,
+      "requests": 5792735,
+      "pageViews": 417680,
       "uniques": 407511
     },
     {
       "date": "2026-10-27",
-      "requests": 6894204,
-      "pageViews": 440561,
+      "requests": 6894187,
+      "pageViews": 440559,
       "uniques": 392827
     },
     {
       "date": "2026-10-28",
-      "requests": 8951223,
-      "pageViews": 473421,
+      "requests": 8951238,
+      "pageViews": 473422,
       "uniques": 619429
     },
     {
       "date": "2026-10-29",
-      "requests": 10470381,
-      "pageViews": 508276,
-      "uniques": 455560
+      "requests": 10464270,
+      "pageViews": 507973,
+      "uniques": 455904
     },
     {
       "date": "2026-10-30",
-      "requests": 8963527,
-      "pageViews": 454367,
+      "requests": 8962577,
+      "pageViews": 454330,
       "uniques": 321403
     },
     {
       "date": "2026-10-31",
-      "requests": 5285610,
-      "pageViews": 304415,
+      "requests": 5285602,
+      "pageViews": 304414,
       "uniques": 284755
     },
     {
       "date": "2026-11-01",
-      "requests": 5477179,
+      "requests": 5477176,
       "pageViews": 385648,
       "uniques": 232150
     },
     {
       "date": "2026-11-02",
-      "requests": 6445524,
-      "pageViews": 415808,
+      "requests": 6447849,
+      "pageViews": 415860,
       "uniques": 259062
     },
     {
       "date": "2026-11-03",
-      "requests": 9271235,
-      "pageViews": 478707,
+      "requests": 9271421,
+      "pageViews": 478720,
       "uniques": 177973
     },
     {
       "date": "2026-11-04",
-      "requests": 10360073,
-      "pageViews": 722070,
+      "requests": 10360559,
+      "pageViews": 722097,
       "uniques": 253824
     },
     {
       "date": "2026-11-05",
-      "requests": 10612932,
-      "pageViews": 1069352,
+      "requests": 10612950,
+      "pageViews": 1069363,
       "uniques": 221303
     },
     {
@@ -123,73 +117,79 @@
     },
     {
       "date": "2026-11-07",
-      "requests": 6048497,
-      "pageViews": 347678,
+      "requests": 6048522,
+      "pageViews": 347679,
       "uniques": 151241
     },
     {
       "date": "2026-11-08",
-      "requests": 5819978,
-      "pageViews": 294452,
+      "requests": 5819981,
+      "pageViews": 294453,
       "uniques": 161910
     },
     {
       "date": "2026-11-09",
-      "requests": 7036795,
-      "pageViews": 316122,
-      "uniques": 129403
+      "requests": 7036943,
+      "pageViews": 316147,
+      "uniques": 129197
     },
     {
       "date": "2026-11-10",
-      "requests": 7181534,
-      "pageViews": 346908,
+      "requests": 7181565,
+      "pageViews": 346911,
       "uniques": 121923
     },
     {
       "date": "2026-11-11",
-      "requests": 7321620,
-      "pageViews": 336446,
-      "uniques": 249214
+      "requests": 7323048,
+      "pageViews": 336492,
+      "uniques": 249133
     },
     {
       "date": "2026-11-12",
-      "requests": 7071113,
-      "pageViews": 401669,
+      "requests": 7071139,
+      "pageViews": 401671,
       "uniques": 274100
     },
     {
       "date": "2026-11-13",
-      "requests": 7086127,
-      "pageViews": 468671,
+      "requests": 7084525,
+      "pageViews": 468540,
       "uniques": 369608
     },
     {
       "date": "2026-11-14",
-      "requests": 5299284,
-      "pageViews": 447160,
+      "requests": 5299224,
+      "pageViews": 447157,
       "uniques": 321218
     },
     {
       "date": "2026-11-15",
-      "requests": 4618354,
-      "pageViews": 418051,
+      "requests": 4618339,
+      "pageViews": 418052,
       "uniques": 303024
     },
     {
       "date": "2026-11-16",
-      "requests": 6630177,
-      "pageViews": 421608,
+      "requests": 6630312,
+      "pageViews": 421668,
       "uniques": 275540
+    },
+    {
+      "date": "2026-11-17",
+      "requests": 7006443,
+      "pageViews": 446715,
+      "uniques": 333137
     }
   ],
   "last24h": {
-    "requests": 6630177,
-    "pageViews": 421608,
-    "uniques": 275540
+    "requests": 7006443,
+    "pageViews": 446715,
+    "uniques": 333137
   },
   "last30d": {
-    "requests": 203780713,
-    "pageViews": 13101103,
-    "uniques": 5898067
+    "requests": 205638265,
+    "pageViews": 13203862,
+    "uniques": 6010256
   }
 }
